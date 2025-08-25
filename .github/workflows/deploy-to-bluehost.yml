@@ -26,7 +26,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port:     ${{ secrets.FTP_PORT }}
           protocol: ftps
-          server-dir: /public_html/website_b063a7ea/
+          server-dir: /home4/nouttamy/public_html/website_b063a7ea/
           local-dir: .
           exclude: |
             **/.git*
