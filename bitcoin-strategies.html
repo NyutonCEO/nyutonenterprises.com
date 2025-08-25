@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Bitcoin Strategies — Nyuton Enterprises</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Tap into Bitcoin's momentum with live ROI tools and strategy tips." />
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/img/hero.svg" as="image" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <script defer src="/assets/js/main.js"></script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary navigation">
+  <div class="container nav-inner">
+    <a class="logo" href="/"><img src="/assets/img/logo.svg" alt="Nyuton Enterprises logo" /><strong>Nyuton</strong></a>
+    <button class="burger" aria-expanded="false" aria-controls="menu" data-burger>Menu</button>
+    <div class="menu" id="menu" data-menu>
+      <a href="/" aria-current="page">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html" class="btn">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+  <main class="container section">
+    <h1>Bitcoin Strategies</h1>
+    <p id="yoy-offer">Don't miss out on this limited time offer to earn <span id="yoy-percent">--</span>% on your principal value 🚀</p>
+    <div class="card" style="margin-top:1.2rem">
+      <label for="principal">Principal (USD):</label>
+      <input type="number" id="principal" placeholder="1000" />
+      <button id="compute">Calculate</button>
+      <p id="calc-result" class="muted"></p>
+    </div>
+  </main>
+
+<footer class="footer">
+  <div class="container">
+    <div>© 2025 Nyuton Enterprises LLC — All rights reserved.</div>
+    <div class="list" style="margin-top:.6rem">
+      <span class="badge">Raleigh • Durham • Garner</span>
+      <a class="badge" href="/vending.html">Vending</a>
+      <a class="badge" href="/gaming.html">Gaming</a>
+      <a class="badge" href="/cybersecurity.html">Cybersecurity</a>
+      <a class="badge" href="/online-ads.html">Online Ads</a>
+      <a class="badge" href="/bitcoin-strategies.html">Bitcoin Strategies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(async function() {
+  try {
+    const nowRes = await fetch('https://api.coindesk.com/v1/bpi/currentprice/USD.json');
+    const nowData = await nowRes.json();
+    const current = nowData.bpi.USD.rate_float;
+
+    const yearAgo = new Date();
+    yearAgo.setFullYear(yearAgo.getFullYear() - 1);
+    const start = yearAgo.toISOString().split('T')[0];
+    const pastRes = await fetch(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${start}&end=${start}`);
+    const pastData = await pastRes.json();
+    const past = pastData.bpi[start];
+
+    const yoy = ((current - past) / past * 100).toFixed(2);
+    document.getElementById('yoy-percent').textContent = yoy;
+
+    document.getElementById('compute').addEventListener('click', () => {
+      const principal = parseFloat(document.getElementById('principal').value);
+      if (!isNaN(principal)) {
+        const result = principal * (1 + parseFloat(yoy) / 100);
+        document.getElementById('calc-result').textContent = `Potential value: $${result.toFixed(2)}`;
+      }
+    });
+  } catch (e) {
+    document.getElementById('yoy-offer').textContent = 'Unable to fetch Bitcoin data right now.';
+  }
+})();
+</script>
+
+</body>
+</html>
