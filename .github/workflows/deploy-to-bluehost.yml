@@ -1,0 +1,30 @@
+name: Deploy to Bluehost
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: {}   # lets you click “Run workflow”
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy via FTP (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     ${{ secrets.FTP_PORT }}
+          protocol: ftps
+          server-dir: /public_html/website_b063a7ea/
+          local-dir: .
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/README.md
+          dangerous-clean-slate: false
