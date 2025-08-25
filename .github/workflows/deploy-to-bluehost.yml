@@ -1,17 +1,43 @@
-- uses: actions/checkout@v4
+name: Deploy to Bluehost
 
-- name: Deploy via FTP (FTPS)
-  uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-  with:
-    server:   ${{ secrets.FTP_SERVER }}
-    username: ${{ secrets.FTP_USERNAME }}
-    password: ${{ secrets.FTP_PASSWORD }}
-    port:     ${{ secrets.FTP_PORT }}
-    protocol: ftps
-    server-dir: /public_html/website_b063a7ea/
-    local-dir: .
-    exclude: |
-      **/.git*
-      **/.github/**
-      **/README.md
-    dangerous-clean-slate: false
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server:   ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port:     ${{ secrets.FTP_PORT }}
+          protocol: ftps
+          server-dir: /public_html/website_b063a7ea/
+          local-dir: .
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/README.md
+          dangerous-clean-slate: false
+
+      - name: Post-deploy health check
+        env:
+          SITE_URL: https://nyutonenterprises.com
+        run: |
+          set -e
+          curl -I --max-time 25 "$SITE_URL"
+          curl -s "$SITE_URL" | grep -q "Real businesses. Real cashflow."
