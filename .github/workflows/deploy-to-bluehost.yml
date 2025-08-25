@@ -12,8 +12,6 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,8 +24,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port:     ${{ secrets.FTP_PORT }}
           protocol: ftps
-          server-dir: /home4/nouttamy/public_html/website_b063a7ea/
-          local-dir: .
+          server-dir: /public_html/website_b063a7ea/   # keep trailing slash
+          local-dir: ./                                # <-- trailing slash required
           exclude: |
             **/.git*
             **/.github/**
