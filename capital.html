@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nyuton Bitcoin Business — Limited-Time Offer</title>
+  <meta name="description" content="Limited-time Bitcoin bonus for business clients. Earn BTC rewards on every purchase plus a one-time signup bonus." />
+  <style>
+    :root{
+      --brand:#0f172a;        /* deep navy */
+      --accent:#16a34a;       /* green accent */
+      --gold:#eab308;         /* 'limited time' tag */
+      --ink:#0b1220;
+      --muted:#667085;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --ring:rgba(22,163,74,.18);
+      --shadow:0 10px 30px rgba(2,6,23,.12);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;color:var(--ink);background:var(--bg)}
+    .wrap{max-width:940px;margin:32px auto;padding:0 16px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:var(--brand);color:#fff}
+    .brand{font-weight:800;letter-spacing:.3px}
+    .tag{background:var(--gold);color:#1a1a1a;padding:6px 12px;border-radius:999px;font-weight:700;font-size:12px}
+    .hero{padding:26px 24px 6px}
+    .hero h1{margin:.2rem 0 6px;font-size: clamp(20px, 3.5vw, 30px)}
+    .hero p{margin:0;color:var(--muted)}
+    .benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:18px 24px}
+    .benefit{border:1px solid #e5e7eb;border-radius:12px;padding:16px}
+    .benefit b{display:block;font-size:28px;margin-bottom:6px;color:var(--accent)}
+    .steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:22px 24px;border-top:1px solid #e5e7eb}
+    .left, .right{background:#f9fafb;border:1px solid #eef2f7;border-radius:12px;padding:18px}
+    .num{font-weight:900;background:var(--accent);color:#fff;border-radius:8px;display:inline-block;padding:4px 10px;margin-right:8px}
+    .qr{height:154px;border:2px dashed #cbd5e1;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#64748b;font-weight:700;margin:8px 0 10px}
+    .codes{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#fff;border:1px dashed #cbd5e1;border-radius:10px;padding:10px 12px;margin-top:8px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .btn{appearance:none;border:0;border-radius:10px;padding:12px 16px;font-weight:800;cursor:pointer}
+    .btn.primary{background:var(--accent);color:#fff;box-shadow:0 0 0 6px var(--ring)}
+    .btn.secondary{background:#0ea5e9;color:#fff}
+    .footer{padding:16px 22px;border-top:1px solid #e5e7eb;color:#6b7280;font-size:13px}
+    @media (max-width:760px){
+      .benefits{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <!-- Top bar -->
+      <div class="bar">
+        <div class="brand">Nyuton Bitcoin Business</div>
+        <div class="tag">LIMITED-TIME OFFER</div>
+      </div>
+
+      <!-- Hero copy -->
+      <div class="hero">
+        <h1>Don’t miss this offer to earn a <span style="color:var(--accent);">$1,500</span> one-time Bitcoin bonus</h1>
+        <p>Get rewarded in BTC for the spending your business already does.</p>
+      </div>
+
+      <!-- Benefits -->
+      <div class="benefits">
+        <div class="benefit">
+          <b>Unlimited 2% back in BTC</b>
+          on every purchase, everywhere your business spends.
+        </div>
+        <div class="benefit">
+          <b>Unlimited 5% back in BTC</b>
+          on hotels & rental cars booked through our partner travel portal.
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="steps">
+        <div class="left">
+          <div><span class="num">1</span>Scan the QR code</div>
+          <div class="qr">QR CODE</div>
+
+          <div class="codes">
+            <div>Visit: <strong>getbtc.nyuton.com/offer</strong></div>
+            <div>Reservation #: <strong>BTC-2025-NYU-001</strong></div>
+            <div>Access code: <strong>SATS</strong></div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div><span class="num">2</span>Complete your application</div>
+          <p style="margin:.4rem 0 1rem;">Takes about 3–5 minutes. No codes to enter if you used the QR.</p>
+          <div><span class="num">3</span>Click submit — get a response in seconds</div>
+          <div class="cta">
+            <button class="btn primary">Apply Now</button>
+            <button class="btn secondary">Talk to a Specialist</button>
+          </div>
+          <p style="margin:.8rem 0 0;color:#64748b;font-size:14px;">Start earning BTC on every purchase. Apply by <b>{{DATE}}</b>.</p>
+        </div>
+      </div>
+
+      <!-- Fine print -->
+      <div class="footer">
+        Bonus terms: Earn a one-time <b>$1,500 in BTC</b> after qualifying spend of <b>{{SPEND_REQUIREMENT}}</b> within <b>{{TIMEFRAME}}</b> of approval. 2% and 5% BTC back post as bitcoin based on market rate at posting time. Network & custody provided by our licensed partners. Crypto involves risk and price volatility. Not investment, legal, or tax advice. Existing or previous participants may be ineligible for the one-time bonus. Additional terms apply.
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
