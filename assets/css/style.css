@@ -148,7 +148,7 @@ a:hover {
 
 .hero {
     background: linear-gradient(135deg, rgba(34, 197, 94, .25), rgba(14, 165, 233, .25)), url('../img/nyuton.gif') center/cover no-repeat;
-    border-bottom: 1px solid rgba(255, 255, 255, .06);
+    border-bottom: 0px solid rgba(255, 255, 255, .06);
 }
 
 .hero-inner {
