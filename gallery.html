@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallery — Nyuton Enterprises</title>
+  <meta name="description" content="Photo gallery showcasing Nyuton Enterprises vending and micro-market installs." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/gallery.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Nyuton Enterprises</a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="services.html">Services</a>
+      <a href="vending.html">Vending</a>
+      <a class="active" href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Gallery</h1>
+    <p class="page-sub">A growing look at our vending & micro-market installs.</p>
+
+    <ul id="gallery" class="gallery" aria-label="Image gallery"></ul>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lb-close" id="lbClose" aria-label="Close (Esc)">×</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous (←)">‹</button>
+    <figure class="lb-stage">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-nav next" id="lbNext" aria-label="Next (→)">›</button>
+  </div>
+
+  <script>
+    // ---- Minimal content config: add more items here as you add files to /assets
+    const GALLERY_ITEMS = [
+      { src: "assets/vending1.jpg", thumb: "assets/vending1.jpg", alt: "Vending machine install — Nyuton Enterprises", caption: "Vending install" },
+      // Example for later:
+      // { src: "assets/vending2.jpg", thumb: "assets/vending2.jpg", alt: "Micro-market setup", caption: "Micro-market" },
+    ];
+  </script>
+  <script src="assets/js/gallery.js" defer></script>
+</body>
+</html>
