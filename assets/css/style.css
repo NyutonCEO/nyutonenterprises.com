@@ -165,6 +165,59 @@ a:hover {
     margin: 0 0 1rem;
 }
 
+/* Glitch burst effect for rotating word */
+.flicker-word { position: relative; display: inline-block; z-index: 1; will-change: transform; }
+
+@keyframes glitch-jitter {
+    0% { transform: none; }
+    15% { transform: skewX(2deg); }
+    30% { transform: skewX(-2deg); }
+    45% { transform: translateX(1px); }
+    60% { transform: translateX(-1px); }
+    75% { transform: skewX(1deg); }
+    100% { transform: none; }
+}
+
+@keyframes glitch-clip {
+    0% { clip-path: inset(0 0 85% 0); transform: translate(-2px, -2px); }
+    10% { clip-path: inset(15% 0 60% 0); transform: translate(2px, 2px); }
+    20% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 2px); }
+    30% { clip-path: inset(60% 0 20% 0); transform: translate(2px, -2px); }
+    40% { clip-path: inset(85% 0 0 0); transform: translate(-2px, 0); }
+    50% { clip-path: inset(0 0 85% 0); transform: translate(2px, 0); }
+    60% { clip-path: inset(10% 0 60% 0); transform: translate(0, 2px); }
+    70% { clip-path: inset(40% 0 40% 0); transform: translate(0, -2px); }
+    80% { clip-path: inset(60% 0 20% 0); transform: translate(2px, 0); }
+    90% { clip-path: inset(85% 0 0 0); transform: translate(-2px, 0); }
+    100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+}
+
+.flicker-word::before,
+.flicker-word::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.flicker-animate { animation: glitch-jitter 450ms steps(10, end); }
+.flicker-animate::before {
+    color: #ff004c;
+    text-shadow: -1px 0 #ff004c;
+    mix-blend-mode: lighten;
+    opacity: 1;
+    animation: glitch-clip 450ms steps(12, end) both;
+}
+.flicker-animate::after {
+    color: #00eaff;
+    text-shadow: 1px 0 #00eaff;
+    mix-blend-mode: lighten;
+    opacity: 1;
+    animation: glitch-clip 450ms steps(12, end) reverse both;
+}
+
 .hero p {
     color: var(--muted);
     font-size: clamp(1rem, 2vw, 1.2rem);
