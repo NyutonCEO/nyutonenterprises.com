@@ -36,6 +36,8 @@ jobs:
         env:
           SITE_URL: https://nyutonenterprises.com
         run: |
-          set -e
-          curl -I --max-time 25 "$SITE_URL"
-          curl -s "$SITE_URL" | grep -q "Real businesses. Real cashflow."
+          set -euo pipefail
+          # Check headers and status
+          curl -fsSI --max-time 25 "$SITE_URL" >/dev/null
+          # Content check: look for stable markers rather than exact old headline
+          curl -fsSL --max-time 25 "$SITE_URL" | grep -qiE "Nyuton Enterprises|Get a Quote|Vending & Micro\-Markets"
