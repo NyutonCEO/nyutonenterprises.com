@@ -61,6 +61,37 @@
       <button id="compute" style="margin-top:.8rem">Calculate</button>
       <p id="calc-result" class="muted"></p>
     </div>
+
+    <hr class="divider" style="margin:2rem 0" />
+
+    <h2>S&P 500 Strategy</h2>
+    <p id="sp-offer">Live S&P 500 growth: <strong><span id="sp-yoy">--</span>%</strong> over the last year. Use the calculator to estimate based on 1-year and 5-year performance of SPY (S&P 500 ETF).</p>
+    <div class="card" style="margin-top:1.2rem">
+      <label for="sp-principal">Principal (USD):</label>
+      <input type="number" id="sp-principal" placeholder="1000" min="0" step="0.01" />
+
+      <div class="row" style="margin-top:.8rem">
+        <div>
+          <label for="sp-add-daily">Daily addition (USD)</label>
+          <input type="number" id="sp-add-daily" placeholder="0" min="0" step="0.01" />
+        </div>
+        <div>
+          <label for="sp-add-weekly">Weekly addition (USD)</label>
+          <input type="number" id="sp-add-weekly" placeholder="0" min="0" step="0.01" />
+        </div>
+        <div>
+          <label for="sp-add-monthly">Monthly addition (USD)</label>
+          <input type="number" id="sp-add-monthly" placeholder="0" min="0" step="0.01" />
+        </div>
+      </div>
+
+      <div class="muted" style="margin:.6rem 0 0">
+        <span>1-year growth: <strong id="sp-growth-1y">--</strong></span>
+        <span style="margin-left:1rem">5-year growth: <strong id="sp-growth-5y">--</strong></span>
+      </div>
+      <button id="sp-compute" style="margin-top:.8rem">Calculate</button>
+      <p id="sp-result" class="muted"></p>
+    </div>
   </main>
 
 <footer class="footer">
@@ -234,6 +265,113 @@
     document.getElementById('principal').addEventListener('keydown', (e) => { if (e.key === 'Enter') compute(); });
   } catch (e) {
     document.getElementById('yoy-offer').textContent = 'Unable to fetch live Bitcoin data right now.';
+  }
+})();
+
+// S&P 500 (SPY proxy) section
+(async function() {
+  const fmtUSD = (n) => n.toLocaleString(undefined, { style: 'currency', currency: 'USD', maximumFractionDigits: 2 });
+  const pct = (n) => `${n.toFixed(2)}%`;
+  const cacheTTLms = 6 * 60 * 60 * 1000; // 6 hours
+  const yyyyMmDd = (d) => d.toISOString().split('T')[0];
+
+  function fromCache(key) {
+    try { const raw = localStorage.getItem(key); if (!raw) return null; const { t, v } = JSON.parse(raw); if (Date.now() - t < cacheTTLms) return v; } catch {}
+    return null;
+  }
+  function toCache(key, v) { try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), v })); } catch {} }
+
+  async function fetchDailySPY() {
+    const k = 'spy_daily_full_v1';
+    const c = fromCache(k); if (c) return c;
+    const qs = new URLSearchParams(location.search);
+    const apiKey = (window.AV_API_KEY || qs.get('avkey') || 'demo').trim();
+    const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=SPY&outputsize=full&apikey=${encodeURIComponent(apiKey)}`;
+    const r = await fetch(url, { headers: { 'Accept': 'application/json' } });
+    if (!r.ok) throw new Error('SPY fetch failed');
+    const j = await r.json();
+    const ts = j['Time Series (Daily)'];
+    if (!ts) throw new Error('No time series');
+    // Convert to sorted array [{date, close}]
+    const arr = Object.keys(ts).map(d => ({ date: d, close: parseFloat(ts[d]['5. adjusted close'] || ts[d]['4. close']) })).filter(x => isFinite(x.close)).sort((a,b) => new Date(a.date) - new Date(b.date));
+    toCache(k, arr);
+    return arr;
+  }
+
+  function nearestPrice(arr, targetDate) {
+    // arr is sorted by date asc
+    const t = new Date(targetDate).getTime();
+    let best = arr[0];
+    for (const p of arr) {
+      const diff = Math.abs(new Date(p.date).getTime() - t);
+      if (diff < Math.abs(new Date(best.date).getTime() - t)) best = p;
+    }
+    return best.close;
+  }
+
+  function fvWithContrib(p0, g, years, addD, addW, addM) {
+    let total = p0 * g;
+    const nD = Math.floor(365 * years);
+    const nW = Math.floor(52 * years);
+    const nM = Math.floor(12 * years);
+    for (let i = 1; i <= nD; i++) total += (addD||0) * Math.pow(g, 1 - i / nD);
+    for (let i = 1; i <= nW; i++) total += (addW||0) * Math.pow(g, 1 - i / nW);
+    for (let i = 1; i <= nM; i++) total += (addM||0) * Math.pow(g, 1 - i / nM);
+    return total;
+  }
+
+  try {
+    const data = await fetchDailySPY();
+    const current = data[data.length - 1].close;
+    const oneYearAgo = new Date(); oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+    const fiveYearsAgo = new Date(); fiveYearsAgo.setFullYear(fiveYearsAgo.getFullYear() - 5);
+    const price1y = nearestPrice(data, yyyyMmDd(oneYearAgo));
+    const price5y = nearestPrice(data, yyyyMmDd(fiveYearsAgo));
+
+    const g1 = current / price1y;
+    const g5 = current / price5y;
+    document.getElementById('sp-yoy').textContent = ((g1 - 1) * 100).toFixed(2);
+    document.getElementById('sp-growth-1y').textContent = `${((g1 - 1) * 100).toFixed(2)}% (x${g1.toFixed(2)})`;
+    document.getElementById('sp-growth-5y').textContent = `${((g5 - 1) * 100).toFixed(2)}% (x${g5.toFixed(2)})`;
+
+    function compute() {
+      const p = parseFloat(document.getElementById('sp-principal').value) || 0;
+      const addD = parseFloat(document.getElementById('sp-add-daily').value) || 0;
+      const addW = parseFloat(document.getElementById('sp-add-weekly').value) || 0;
+      const addM = parseFloat(document.getElementById('sp-add-monthly').value) || 0;
+      const v1 = fvWithContrib(p, g1, 1, addD, addW, addM);
+      const v5 = fvWithContrib(p, g5, 5, addD, addW, addM);
+      const low = Math.min(v1, v5);
+      const high = Math.max(v1, v5);
+      document.getElementById('sp-result').textContent = `Estimated range with contributions: ${fmtUSD(low)} — ${fmtUSD(high)}`;
+    }
+    document.getElementById('sp-compute').addEventListener('click', compute);
+    document.getElementById('sp-principal').addEventListener('keydown', (e) => { if (e.key === 'Enter') compute(); });
+  } catch (e) {
+    // Fallback: assume 8% YoY growth, compounded for 5 years
+    const yoy = 0.08;
+    const g1 = 1 + yoy;
+    const g5 = Math.pow(1 + yoy, 5);
+    document.getElementById('sp-yoy').textContent = (yoy * 100).toFixed(2);
+    document.getElementById('sp-growth-1y').textContent = `${(yoy * 100).toFixed(2)}% (x${g1.toFixed(2)})`;
+    document.getElementById('sp-growth-5y').textContent = `${(((g5 - 1) * 100)).toFixed(2)}% (x${g5.toFixed(2)})`;
+    const msg = 'Using default 8% YoY assumption due to data limits.';
+    const p = document.getElementById('sp-offer');
+    if (p) p.textContent = msg;
+
+    function compute() {
+      const p0 = parseFloat(document.getElementById('sp-principal').value) || 0;
+      const addD = parseFloat(document.getElementById('sp-add-daily').value) || 0;
+      const addW = parseFloat(document.getElementById('sp-add-weekly').value) || 0;
+      const addM = parseFloat(document.getElementById('sp-add-monthly').value) || 0;
+      const v1 = fvWithContrib(p0, g1, 1, addD, addW, addM);
+      const v5 = fvWithContrib(p0, g5, 5, addD, addW, addM);
+      const low = Math.min(v1, v5);
+      const high = Math.max(v1, v5);
+      document.getElementById('sp-result').textContent = `Estimated range with contributions: ${fmtUSD(low)} — ${fmtUSD(high)} (default growth)`;
+    }
+    document.getElementById('sp-compute').addEventListener('click', compute);
+    document.getElementById('sp-principal').addEventListener('keydown', (e) => { if (e.key === 'Enter') compute(); });
   }
 })();
 </script>
