@@ -294,12 +294,17 @@ a:hover {
 /* Footer layout (brand row + 3-column links) */
 .footer .brand-row { display: grid; gap: .2rem; margin-bottom: 1rem; }
 .footer .brand { display: flex; align-items: center; gap: .6rem; }
-.footer-links {
+.footer-links { width: 100%; }
+.footer-links .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(4, auto);
+    gap: .3rem 1rem;
 }
-.footer .links { list-style: none; padding: 0; margin: 0; display: grid; gap: .3rem; }
+.footer .links { list-style: none; padding: 0; margin: 0; }
 .footer a { color: var(--muted); }
 .footer a:hover { color: var(--text); text-decoration: none; }
 
