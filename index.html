@@ -16,6 +16,17 @@
 
 </head>
 <body>
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <img src="/assets/img/logo.svg" alt="Nyuton Enterprises" width="60" height="60" />
+      </div>
+      <div class="loading-text">Building Tomorrow's Ventures</div>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
   
 <nav class="nav" aria-label="Primary navigation">
   <div class="container nav-inner">
@@ -32,21 +43,99 @@
   </div>
 </nav>
 
-  <a href="/contact.html" class="btn sticky-cta">Get a Quote</a>
 
   <header class="hero">
+    <div class="hero-particles"></div>
     <div class="container hero-inner">
-      <h1>Real <span class="flicker-word" data-rotating-words="Gaming,Cybersecurity,Vending,Compliance" aria-live="polite">Gaming</span>.</h1>
-      <p>We operate and grow ventures in <strong>vending</strong>, <strong>gaming</strong>, <strong>cybersecurity</strong>, and <strong>online advertising</strong> — built for durability and scale.</p>
-      <p>
+      <div class="hero-badge">
+        <span class="badge-text">🚀 Building Tomorrow's Ventures</span>
+      </div>
+      <h1 class="hero-title">Build <span class="flicker-word" data-rotating-words="Gaming,Cybersecurity,Vending,Compliance" aria-live="polite">Gaming</span> Cashflow.</h1>
+      <p class="hero-sub">We operate and grow ventures in <strong>vending</strong>, <strong>gaming</strong>, <strong>cybersecurity</strong>, and <strong>online advertising</strong> — built for durability and scale.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-number">$2M+</span>
+          <span class="stat-label">Revenue Generated</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Active Ventures</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">99.9%</span>
+          <span class="stat-label">Uptime</span>
+        </div>
+      </div>
+      <p class="hero-cta">
         <a class="btn" href="/contact.html">Start a project</a>
         <a class="btn secondary" href="/services.html">Explore services</a>
       </p>
     </div>
   </header>
 
+  <section class="container section">
+    <div class="slider loading" data-slider>
+      <button class="slider-nav prev" aria-label="Previous slide" data-prev>‹</button>
+      <div class="slides" data-slides>
+        <figure class="slide" aria-roledescription="slide">
+          <div class="slide-bg" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);"></div>
+          <div class="slide-content">
+            <h3>Smart Vending Solutions</h3>
+            <p>Cashless machines with real-time analytics and optimized product mix for maximum revenue.</p>
+            <div class="slide-stats">
+              <div class="stat">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Monitoring</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">95%</span>
+                <span class="stat-label">Uptime</span>
+              </div>
+            </div>
+          </div>
+        </figure>
+        <figure class="slide" aria-roledescription="slide">
+          <div class="slide-bg" style="background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%);"></div>
+          <div class="slide-content">
+            <h3>Gaming & Interactive</h3>
+            <p>Original HTML5 games and brand activations that drive engagement and conversions.</p>
+            <div class="slide-stats">
+              <div class="stat">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Players</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">85%</span>
+                <span class="stat-label">Retention</span>
+              </div>
+            </div>
+          </div>
+        </figure>
+        <figure class="slide" aria-roledescription="slide">
+          <div class="slide-bg" style="background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);"></div>
+          <div class="slide-content">
+            <h3>Cybersecurity</h3>
+            <p>Pragmatic security solutions that protect without slowing down your operations.</p>
+            <div class="slide-stats">
+              <div class="stat">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Security</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">24h</span>
+                <span class="stat-label">Response</span>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+      <button class="slider-nav next" aria-label="Next slide" data-next>›</button>
+      <div class="dots" role="tablist" aria-label="Slide pagination" data-dots></div>
+    </div>
+  </section>
+
   <main class="container section">
-    <section class="grid">
+    <section class="grid reveal">
       <article class="card" aria-labelledby="vending">
         <h3 id="vending"><a href="/vending.html">Vending & Micro‑Markets</a></h3>
         <p>Smart, cashless machines with product mix tuned to your traffic. We handle placement, restock, and support.</p>
@@ -88,16 +177,62 @@
       </article>
     </section>
 
-    <section class="section">
+    <section class="section reveal">
       <h2>Why Nyuton Enterprises?</h2>
       <div class="grid">
         <div class="card">
+          <div class="card-icon">🎯</div>
           <h3>Skin in the game</h3>
           <p>We operate what we sell. No fluff — just systems that print receipts.</p>
         </div>
         <div class="card">
+          <div class="card-icon">⚡</div>
           <h3>Lean & fast</h3>
           <p>Small team, tight feedback loops, shipping weekly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="testimonials-title">What Our Partners Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Nyuton transformed our vending operations. Revenue increased 300% in just 6 months."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">👨‍💼</div>
+              <div class="author-info">
+                <h4>Michael Chen</h4>
+                <span>CEO, TechCorp</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"Their cybersecurity approach is pragmatic and effective. No unnecessary complexity."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">👩‍💻</div>
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <span>CTO, StartupXYZ</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"The gaming solutions drove incredible engagement. Our retention rates doubled."</p>
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">🎮</div>
+              <div class="author-info">
+                <h4>Alex Rodriguez</h4>
+                <span>Product Manager, GameStudio</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
