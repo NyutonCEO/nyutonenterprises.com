@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Nyuton Enterprises — Build real cashflow</title>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Nyuton Enterprises — vending, gaming, cybersecurity, and online advertising. We build cashflow with integrity and speed." />
+  <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/img/hero.svg" as="image" />
+  <link rel="canonical" href="https://nyutonenterprises.com/" />
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+            'display': ['Poppins', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            primary: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            secondary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            accent: {
+              50: '#faf5ff',
+              100: '#f3e8ff',
+              200: '#e9d5ff',
+              300: '#d8b4fe',
+              400: '#c084fc',
+              500: '#a855f7',
+              600: '#9333ea',
+              700: '#7c3aed',
+              800: '#6b21a8',
+              900: '#581c87',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #22c55e, #0ea5e9, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .glass-effect {
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .premium-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+      backdrop-filter: blur(20px);
+    }
+    
+    .premium-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .premium-card:hover::before {
+      opacity: 1;
+    }
+    
+    .cyber-grid {
+      background-image: 
+        linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(34, 197, 94, 0.6); }
+    }
+    
+    .glow-effect {
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #1e293b;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #22c55e, #0ea5e9);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(to bottom, #16a34a, #0284c7);
+    }
+    
+    /* Selection styles */
+    ::selection {
+      background: rgba(34, 197, 94, 0.3);
+      color: white;
+    }
+    
+    /* Focus styles */
+    *:focus-visible {
+      outline: none;
+      ring: 2px solid rgba(34, 197, 94, 0.5);
+      ring-offset: 2px;
+      ring-offset-color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <!-- React and Framer Motion CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/framer-motion@11/dist/framer-motion.js"></script>
+  
+  <!-- Main App Script -->
+  <script type="module">
+    const { useState, useEffect, useRef } = React;
+    const { motion, AnimatePresence } = Motion;
+    
+    // Loading Screen Component
+    const LoadingScreen = () => {
+      return React.createElement(motion.div, {
+        initial: { opacity: 1 },
+        exit: { opacity: 0 },
+        transition: { duration: 0.8 },
+        className: "fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+      }, React.createElement("div", { className: "text-center" }, [
+        React.createElement(motion.div, {
+          animate: { 
+            y: [-10, 10, -10],
+            rotate: [0, 5, -5, 0]
+          },
+          transition: { 
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          },
+          className: "mb-8"
+        }, React.createElement("div", {
+          className: "w-20 h-20 mx-auto bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center"
+        }, React.createElement("span", { className: "text-2xl font-bold text-white" }, "N"))),
+        
+        React.createElement(motion.h2, {
+          initial: { opacity: 0, y: 20 },
+          animate: { opacity: 1, y: 0 },
+          transition: { delay: 0.5, duration: 0.8 },
+          className: "text-xl font-semibold text-white mb-4"
+        }, "Building Tomorrow's Ventures"),
+        
+        React.createElement("div", { className: "w-64 h-1 bg-slate-700 rounded-full overflow-hidden" }, React.createElement(motion.div, {
+          initial: { width: 0 },
+          animate: { width: "100%" },
+          transition: { duration: 2.5, ease: "easeInOut" },
+          className: "h-full bg-gradient-to-r from-primary-500 to-secondary-500"
+        })),
+        
+        React.createElement(motion.div, {
+          initial: { opacity: 0 },
+          animate: { opacity: 1 },
+          transition: { delay: 1, duration: 0.5 },
+          className: "mt-4 text-sm text-slate-400"
+        }, "Loading premium experience...")
+      ]));
+    };
+    
+    // Header Component
+    const Header = () => {
+      const [isMenuOpen, setIsMenuOpen] = useState(false);
+      
+      const menuItems = [
+        { name: 'Home', href: '/' },
+        { name: 'Services', href: '/services.html' },
+        { name: 'About', href: '/about.html' },
+        { name: 'Contact', href: '/contact.html' }
+      ];
+      
+      return React.createElement(motion.header, {
+        initial: { y: -100, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+        transition: { duration: 0.8, ease: "easeOut" },
+        className: "fixed top-0 left-0 right-0 z-40 glass-effect"
+      }, React.createElement("div", { className: "container mx-auto px-6 py-4" }, [
+        React.createElement("div", { className: "flex items-center justify-between" }, [
+          React.createElement(motion.div, {
+            whileHover: { scale: 1.05 },
+            className: "flex items-center space-x-3"
+          }, [
+            React.createElement("div", {
+              className: "w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center"
+            }, React.createElement("span", { className: "text-white font-bold text-lg" }, "N")),
+            React.createElement("span", { className: "text-xl font-bold text-white" }, "Nyuton")
+          ]),
+          
+          React.createElement("nav", { className: "hidden md:flex items-center space-x-8" }, menuItems.map((item, index) => 
+            React.createElement(motion.a, {
+              key: item.name,
+              href: item.href,
+              initial: { opacity: 0, y: -20 },
+              animate: { opacity: 1, y: 0 },
+              transition: { delay: index * 0.1 },
+              whileHover: { y: -2 },
+              className: "text-slate-300 hover:text-white transition-colors duration-300 font-medium"
+            }, item.name)
+          )),
+          
+          React.createElement(motion.a, {
+            href: "tel:5551234567",
+            whileHover: { scale: 1.05 },
+            className: "text-primary-400 font-semibold hover:text-primary-300 transition-colors"
+          }, "(555) 123-4567"),
+          
+          React.createElement(motion.button, {
+            whileHover: { scale: 1.05 },
+            whileTap: { scale: 0.95 },
+            className: "px-6 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300"
+          }, "Get Quote"),
+          
+          React.createElement(motion.button, {
+            whileTap: { scale: 0.95 },
+            onClick: () => setIsMenuOpen(!isMenuOpen),
+            className: "md:hidden p-2 text-white"
+          }, React.createElement("div", { className: "w-6 h-6 flex flex-col justify-center space-y-1" }, [
+            React.createElement(motion.span, {
+              animate: { rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 6 : 0 },
+              className: "w-full h-0.5 bg-white transition-all duration-300"
+            }),
+            React.createElement(motion.span, {
+              animate: { opacity: isMenuOpen ? 0 : 1 },
+              className: "w-full h-0.5 bg-white transition-all duration-300"
+            }),
+            React.createElement(motion.span, {
+              animate: { rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -6 : 0 },
+              className: "w-full h-0.5 bg-white transition-all duration-300"
+            })
+          ]))
+        ]),
+        
+        React.createElement(AnimatePresence, null, isMenuOpen && React.createElement(motion.div, {
+          initial: { opacity: 0, height: 0 },
+          animate: { opacity: 1, height: "auto" },
+          exit: { opacity: 0, height: 0 },
+          transition: { duration: 0.3 },
+          className: "md:hidden mt-4 overflow-hidden"
+        }, React.createElement("div", { className: "flex flex-col space-y-4 py-4" }, menuItems.map((item, index) => 
+          React.createElement(motion.a, {
+            key: item.name,
+            href: item.href,
+            initial: { opacity: 0, x: -20 },
+            animate: { opacity: 1, x: 0 },
+            transition: { delay: index * 0.1 },
+            className: "text-slate-300 hover:text-white transition-colors duration-300 font-medium py-2",
+            onClick: () => setIsMenuOpen(false)
+          }, item.name)
+        ))))
+      ]));
+    };
+    
+    // Hero Component
+    const Hero = () => {
+      const [currentWord, setCurrentWord] = useState(0);
+      const words = ['Gaming', 'Cybersecurity', 'Vending', 'Compliance'];
+      
+      useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentWord((prev) => (prev + 1) % words.length);
+        }, 2000);
+        return () => clearInterval(interval);
+      }, []);
+      
+      const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.3
+          }
+        }
+      };
+      
+      const itemVariants = {
+        hidden: { y: 30, opacity: 0 },
+        visible: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 0.8,
+            ease: "easeOut"
+          }
+        }
+      };
+      
+      return React.createElement("section", {
+        className: "relative min-h-screen flex items-center justify-center overflow-hidden"
+      }, [
+        React.createElement("div", { className: "absolute inset-0 cyber-grid opacity-20" }),
+        
+        React.createElement("div", { className: "absolute inset-0" }, 
+          [...Array(20)].map((_, i) => React.createElement(motion.div, {
+            key: i,
+            className: "absolute w-2 h-2 bg-primary-500/30 rounded-full",
+            style: {
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            },
+            animate: {
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+            },
+            transition: {
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }
+          }))
+        ),
+        
+        React.createElement(motion.div, {
+          className: "absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-full blur-3xl",
+          animate: {
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360],
+          },
+          transition: {
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }
+        }),
+        
+        React.createElement(motion.div, {
+          className: "absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-accent-500/20 to-primary-500/20 rounded-full blur-3xl",
+          animate: {
+            scale: [1.2, 1, 1.2],
+            rotate: [360, 180, 0],
+          },
+          transition: {
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear"
+          }
+        }),
+        
+        React.createElement(motion.div, {
+          variants: containerVariants,
+          initial: "hidden",
+          animate: "visible",
+          className: "relative z-10 text-center px-6 max-w-6xl mx-auto"
+        }, [
+          React.createElement(motion.div, {
+            variants: itemVariants,
+            className: "inline-block mb-8"
+          }, React.createElement("div", { className: "glass-effect px-6 py-3 rounded-full" }, React.createElement("span", {
+            className: "text-sm font-semibold text-white flex items-center"
+          }, "🚀 Building Tomorrow's Ventures"))),
+          
+          React.createElement(motion.h1, {
+            variants: itemVariants,
+            className: "text-5xl md:text-7xl font-bold mb-6"
+          }, [
+            React.createElement("span", { className: "gradient-text" }, "Build "),
+            React.createElement(AnimatePresence, { mode: "wait" }, React.createElement(motion.span, {
+              key: currentWord,
+              initial: { opacity: 0, y: 20, rotateX: -90 },
+              animate: { opacity: 1, y: 0, rotateX: 0 },
+              exit: { opacity: 0, y: -20, rotateX: 90 },
+              transition: { duration: 0.5 },
+              className: "inline-block text-primary-400 font-black"
+            }, words[currentWord])),
+            React.createElement("span", { className: "gradient-text" }, " Cashflow.")
+          ]),
+          
+          React.createElement(motion.p, {
+            variants: itemVariants,
+            className: "text-xl md:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+          }, [
+            "We operate and grow ventures in ",
+            React.createElement("strong", { className: "text-primary-400" }, "vending"),
+            ", ",
+            React.createElement("strong", { className: "text-secondary-400" }, "gaming"),
+            ", ",
+            React.createElement("strong", { className: "text-accent-400" }, "cybersecurity"),
+            ", and ",
+            React.createElement("strong", { className: "text-primary-400" }, "online advertising"),
+            " — built for durability and scale."
+          ]),
+          
+          React.createElement(motion.div, {
+            variants: itemVariants,
+            className: "grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+          }, [
+            { number: "$2M+", label: "Revenue Generated" },
+            { number: "50+", label: "Active Ventures" },
+            { number: "99.9%", label: "Uptime" }
+          ].map((stat, index) => React.createElement(motion.div, {
+            key: stat.label,
+            animate: { y: [-10, 10, -10] },
+            transition: { delay: index * 0.2, duration: 4, repeat: Infinity, ease: "easeInOut" },
+            className: "text-center"
+          }, [
+            React.createElement("div", {
+              className: "text-4xl md:text-5xl font-black text-primary-400 mb-2"
+            }, stat.number),
+            React.createElement("div", {
+              className: "text-slate-400 font-medium uppercase tracking-wide"
+            }, stat.label)
+          ]))),
+          
+          React.createElement(motion.div, {
+            variants: itemVariants,
+            className: "flex flex-col sm:flex-row gap-4 justify-center items-center"
+          }, [
+            React.createElement(motion.button, {
+              whileHover: { scale: 1.05, y: -2 },
+              whileTap: { scale: 0.95 },
+              className: "px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-2xl font-bold text-lg shadow-2xl shadow-primary-500/25 hover:shadow-primary-500/40 transition-all duration-300"
+            }, "Start a Project"),
+            
+            React.createElement(motion.button, {
+              whileHover: { scale: 1.05, y: -2 },
+              whileTap: { scale: 0.95 },
+              className: "px-8 py-4 glass-effect text-white rounded-2xl font-bold text-lg hover:bg-white/20 transition-all duration-300"
+            }, "Explore Services")
+          ])
+        ])
+      ]);
+    };
+    
+    // Main App Component
+    const App = () => {
+      const [isLoading, setIsLoading] = useState(true);
+      
+      useEffect(() => {
+        const timer = setTimeout(() => {
+          setIsLoading(false);
+        }, 3000);
+        
+        return () => clearTimeout(timer);
+      }, []);
+      
+      return React.createElement("div", {
+        className: "min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+      }, [
+        React.createElement(AnimatePresence, null, isLoading && React.createElement(LoadingScreen)),
+        
+        React.createElement(motion.div, {
+          initial: { opacity: 0 },
+          animate: { opacity: isLoading ? 0 : 1 },
+          transition: { duration: 0.8 },
+          className: "relative"
+        }, [
+          React.createElement(Header),
+          React.createElement(Hero)
+        ])
+      ]);
+    };
+    
+    // Render the app
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(App));
+  </script>
+</body>
+</html>
