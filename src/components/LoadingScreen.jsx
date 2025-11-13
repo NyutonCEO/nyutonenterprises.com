@@ -22,8 +22,14 @@ const LoadingScreen = () => {
           }}
           className="mb-8"
         >
-          <div className="w-20 h-20 mx-auto bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center">
-            <span className="text-2xl font-bold text-white">N</span>
+          <div className="w-24 h-24 mx-auto flex items-center justify-center">
+            <img 
+              src="/assets/img/logo.jpg" 
+              alt="Nyuton Enterprises" 
+              className="w-full h-full object-contain"
+              width="96"
+              height="96"
+            />
           </div>
         </motion.div>
         

@@ -21,15 +21,20 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div
+          <motion.a
+            href="/"
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3"
           >
-            <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">N</span>
-            </div>
+            <img 
+              src="/assets/img/logo.jpg" 
+              alt="Nyuton Enterprises logo" 
+              className="w-10 h-10"
+              width="40"
+              height="40"
+            />
             <span className="text-xl font-bold text-white">Nyuton</span>
-          </motion.div>
+          </motion.a>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
