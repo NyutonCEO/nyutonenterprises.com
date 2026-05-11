@@ -24,6 +24,10 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXEZQ135VT"></script>
   <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RXEZQ135VT');
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -51,6 +55,12 @@
 
 <nav class="nav" aria-label="Primary navigation">
   <div class="container nav-inner">
+    <a class="logo" href="/"><img src="/assets/img/logo.svg" alt="Nyuton Enterprises logo" width="32" height="32" loading="eager" decoding="async" /><strong>Nyuton</strong></a>
+    <form class="site-search" action="/services.html" role="search" data-site-search>
+      <label class="sr-only" for="site-search">Search Nyuton</label>
+      <input id="site-search" name="q" type="search" placeholder="Search Nyuton..." autocomplete="off" />
+      <button type="submit" aria-label="Search">⌕</button>
+    </form>
     <a class="logo" href="/"><img src="/assets/img/logo.jpg" alt="Nyuton Enterprises logo" width="32" height="32" loading="eager" decoding="async" /><strong>Nyuton</strong></a>
     <button class="burger" aria-expanded="false" aria-controls="menu" data-burger>Menu</button>
     <div class="menu" id="menu" data-menu>
@@ -141,6 +151,11 @@
 <section class="container section" aria-labelledby="brands">
   <h2 id="brands">Premium Brands We Stock</h2>
   <p>Our machines feature top-tier brands your team knows and loves, ensuring high satisfaction and repeat purchases.</p>
+  <div class="brands-grid">
+    <div class="brand-card">
+      <div class="brand-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.jpg/640px-Coca-Cola_logo.jpg.png" alt="Coca-Cola" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">COCA-COLA</div>
   
   <div class="brands-grid">
     <div class="brand-card">
@@ -156,6 +171,10 @@
       <h3>Coca-Cola</h3>
       <p>Classic beverages and refreshing drinks</p>
     </div>
+    <div class="brand-card">
+      <div class="brand-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Sprite_logo.jpg/640px-Sprite_logo.jpg.png" alt="Sprite" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">SPRITE</div>
     
     <div class="brand-card">
       <div class="brand-logo">
@@ -170,6 +189,10 @@
       <h3>Sprite</h3>
       <p>Lemon-lime refreshment</p>
     </div>
+    <div class="brand-card">
+      <div class="brand-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Doritos_logo.jpg/640px-Doritos_logo.jpg.png" alt="Doritos" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">DORITOS</div>
     
     <div class="brand-card">
       <div class="brand-logo">
@@ -184,6 +207,10 @@
       <h3>Doritos</h3>
       <p>Bold flavored tortilla chips</p>
     </div>
+    <div class="brand-card">
+      <div class="brand-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Lay%27s_logo.jpg/640px-Lay%27s_logo.jpg.png" alt="Lays" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="logo-fallback">LAY'S</div>
     
     <div class="brand-card">
       <div class="brand-logo">
