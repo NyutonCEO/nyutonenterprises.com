@@ -1,0 +1,6 @@
+<svg width="180" height="40" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t">
+  <title id="t">Nyuton Enterprises</title>
+  <rect width="180" height="40" rx="8" fill="black"/>
+  <text x="12" y="26" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="16" fill="white">Nyuton</text>
+  <text x="92" y="26" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="500" font-size="16" fill="#9AE6B4">Enterprises</text>
+</svg>

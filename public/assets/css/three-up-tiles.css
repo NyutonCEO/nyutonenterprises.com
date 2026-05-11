@@ -1,0 +1,77 @@
+/* === 3-tile gallery (vending & micro-markets) === */
+
+:root {
+  --tiles-gap: clamp(12px, 2vw, 24px);
+  --tiles-radius: 16px;
+}
+
+.tiles-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--tiles-gap);
+  align-items: stretch;
+}
+
+/* Tile base */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--tiles-radius);
+  background: #f2f2f2;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* Fixed, consistent height for all images */
+.tile .media {
+  width: 100%;
+  height: clamp(320px, 55vh, 520px);
+}
+
+/* Cover the area without distortion */
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform .5s ease;
+}
+
+/* Subtle dark-to-transparent overlay for optional captions */
+.tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.45), rgba(0,0,0,0) 60%);
+  opacity: .55;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+/* Optional label (put text in .label) */
+.tile .label {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  color: #fff;
+  font-weight: 600;
+  font-size: clamp(16px, 2vw, 20px);
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+  z-index: 1;
+}
+
+/* Make whole tile clickable by wrapping with <a class="tile-link"> or using <a> inside */
+.tile > a.tile-link { position: absolute; inset: 0; z-index: 2; }
+
+/* Hover polish */
+.tile:hover img { transform: scale(1.04); }
+.tile:hover::after { opacity: .72; }
+
+/* Responsive: 2-up on tablets, 1-up on phones */
+@media (max-width: 1024px) {
+  .tiles-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .tiles-3 { grid-template-columns: 1fr; }
+  .tile .media { height: clamp(260px, 48vh, 440px); }
+}
