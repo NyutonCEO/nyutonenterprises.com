@@ -1,12 +1,12 @@
 const serviceLinks = [
-  { label: 'Vending & Micro-Markets', href: '#vending' },
-  { label: 'IT & Cybersecurity', href: '#it-cybersecurity' },
-  { label: 'Digital Solutions', href: '#digital-solutions' },
+  { label: 'Vending & Micro-Markets', href: '/vending/' },
+  { label: 'IT & Cybersecurity', href: '/it-cybersecurity/' },
+  { label: 'Digital Solutions', href: '/digital-solutions/' },
 ]
 
 const companyLinks = [
-  { label: 'Why Nyuton', href: '#why' },
-  { label: 'Service Area', href: '#service-area' },
+  { label: 'Why Nyuton', href: '/#why' },
+  { label: 'Service Area', href: '/#service-area' },
   { label: 'Schedule a Free Consultation', href: 'https://calendly.com/nyutonllc/30min', external: true },
   { label: 'nyutonllc@protonmail.com', href: 'mailto:nyutonllc@protonmail.com' },
 ]

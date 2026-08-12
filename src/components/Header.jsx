@@ -2,11 +2,11 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const navItems = [
-  { label: 'Services', href: '#services' },
-  { label: 'Vending', href: '#vending' },
-  { label: 'IT & Cybersecurity', href: '#it-cybersecurity' },
-  { label: 'Digital', href: '#digital-solutions' },
-  { label: 'Service Area', href: '#service-area' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Vending', href: '/vending/' },
+  { label: 'IT & Cybersecurity', href: '/it-cybersecurity/' },
+  { label: 'Digital', href: '/digital-solutions/' },
+  { label: 'Service Area', href: '/#service-area' },
 ]
 
 const quoteUrl = 'https://calendly.com/nyutonllc/30min'
@@ -17,7 +17,7 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/86 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
-        <a href="#home" className="flex items-center gap-3" aria-label="Nyuton Enterprises home">
+        <a href="/" className="flex items-center gap-3" aria-label="Nyuton Enterprises home">
           <img src="/assets/img/logo.jpg" alt="" className="h-10 w-10 rounded-md object-cover" width="40" height="40" />
           <span className="text-base font-semibold tracking-wide text-white sm:text-lg">Nyuton Enterprises</span>
         </a>
@@ -32,7 +32,7 @@ function Header() {
 
         <div className="hidden items-center gap-3 xl:flex">
           <a
-            href="#it-cybersecurity"
+            href="/it-cybersecurity/"
             className="inline-flex min-h-11 items-center rounded-md border border-white/15 px-4 text-sm font-semibold text-white transition hover:bg-white/10"
           >
             Request IT Support
@@ -87,7 +87,7 @@ function Header() {
               ))}
               <div className="grid gap-3 py-4 sm:grid-cols-2">
                 <a
-                  href="#vending"
+                  href="/vending/"
                   onClick={() => setIsOpen(false)}
                   className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/15 px-4 text-sm font-semibold text-white"
                 >

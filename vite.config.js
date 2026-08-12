@@ -10,7 +10,13 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       input: {
-        main: './index.html'
+        main: './index.html',
+        vending: './vending/index.html',
+        itCybersecurity: './it-cybersecurity/index.html',
+        digitalSolutions: './digital-solutions/index.html',
+        raleighVending: './raleigh-vending/index.html',
+        garnerVending: './garner-vending/index.html',
+        caryVending: './cary-vending/index.html'
       }
     }
   },
