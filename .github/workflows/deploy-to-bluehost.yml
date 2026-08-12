@@ -14,10 +14,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production site
+        run: npm run build
 
       - name: Deploy via FTP (FTPS)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server:   ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -25,7 +37,7 @@ jobs:
           port:     ${{ secrets.FTP_PORT }}
           protocol: ftps
           server-dir: /public_html/website_b063a7ea/   # keep trailing slash
-          local-dir: ./                                # <-- trailing slash required
+          local-dir: ./dist/                           # <-- trailing slash required
           exclude: |
             **/.git*
             **/.github/**
