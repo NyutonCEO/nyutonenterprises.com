@@ -1,6 +1,7 @@
 {
   "name": "nyuton-enterprises",
   "version": "2.0.0",
+  "type": "module",
   "description": "Premium business website with Framer Motion animations",
   "main": "index.html",
   "scripts": {

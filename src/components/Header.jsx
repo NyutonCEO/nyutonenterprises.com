@@ -1,142 +1,113 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+const navItems = [
+  { label: 'Services', href: '#services' },
+  { label: 'Vending', href: '#vending' },
+  { label: 'IT & Cybersecurity', href: '#it-cybersecurity' },
+  { label: 'Digital', href: '#digital-solutions' },
+  { label: 'Service Area', href: '#service-area' },
+]
 
-  const menuItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services.html' },
-    { name: 'About', href: '/about.html' },
-    { name: 'Contact', href: '/contact.html' }
-  ]
+const quoteUrl = 'https://calendly.com/nyutonllc/30min'
+
+function Header() {
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-40 glass-effect"
-    >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <motion.a
-            href="/"
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-3"
-          >
-            <img 
-              src="/assets/img/logo.jpg" 
-              alt="Nyuton Enterprises logo" 
-              className="w-10 h-10"
-              width="40"
-              height="40"
-            />
-            <span className="text-xl font-bold text-white">Nyuton</span>
-          </motion.a>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/86 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+        <a href="#home" className="flex items-center gap-3" aria-label="Nyuton Enterprises home">
+          <img src="/assets/img/logo.jpg" alt="" className="h-10 w-10 rounded-md object-cover" width="40" height="40" />
+          <span className="text-base font-semibold tracking-wide text-white sm:text-lg">Nyuton Enterprises</span>
+        </a>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {menuItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -2 }}
-                className="text-slate-300 hover:text-white transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </motion.a>
-            ))}
-            <motion.a
-              href="tel:5551234567"
-              whileHover={{ scale: 1.05 }}
-              className="text-primary-400 font-semibold hover:text-primary-300 transition-colors"
-            >
-              (555) 123-4567
-            </motion.a>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300"
-            >
-              Get Quote
-            </motion.button>
-          </nav>
+        <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary navigation">
+          {navItems.map((item) => (
+            <a key={item.label} href={item.href} className="text-sm font-medium text-slate-300 transition hover:text-white">
+              {item.label}
+            </a>
+          ))}
+        </nav>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-white"
+        <div className="hidden items-center gap-3 xl:flex">
+          <a
+            href="#it-cybersecurity"
+            className="inline-flex min-h-11 items-center rounded-md border border-white/15 px-4 text-sm font-semibold text-white transition hover:bg-white/10"
           >
-            <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <motion.span
-                animate={{ rotate: isMenuOpen ? 45 : 0, y: isMenuOpen ? 6 : 0 }}
-                className="w-full h-0.5 bg-white transition-all duration-300"
-              />
-              <motion.span
-                animate={{ opacity: isMenuOpen ? 0 : 1 }}
-                className="w-full h-0.5 bg-white transition-all duration-300"
-              />
-              <motion.span
-                animate={{ rotate: isMenuOpen ? -45 : 0, y: isMenuOpen ? -6 : 0 }}
-                className="w-full h-0.5 bg-white transition-all duration-300"
-              />
-            </div>
-          </motion.button>
+            Request IT Support
+          </a>
+          <a
+            href={quoteUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-11 items-center rounded-md bg-emerald-400 px-4 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
+          >
+            Schedule a Free Consultation
+          </a>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden mt-4 overflow-hidden"
-            >
-              <div className="flex flex-col space-y-4 py-4">
-                {menuItems.map((item, index) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-slate-300 hover:text-white transition-colors duration-300 font-medium py-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </motion.a>
-                ))}
-                <motion.a
-                  href="tel:5551234567"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-primary-400 font-semibold py-2"
-                >
-                  (555) 123-4567
-                </motion.a>
-                <motion.button
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 }}
-                  className="px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-xl font-semibold w-fit"
-                >
-                  Get Quote
-                </motion.button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <button
+          type="button"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-white/15 text-white xl:hidden"
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
+          aria-label="Toggle navigation"
+          onClick={() => setIsOpen((value) => !value)}
+        >
+          <span className="relative h-4 w-5">
+            <span className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition ${isOpen ? 'translate-y-[7px] rotate-45' : ''}`} />
+            <span className={`absolute left-0 top-[7px] h-0.5 w-5 bg-current transition ${isOpen ? 'opacity-0' : ''}`} />
+            <span className={`absolute left-0 top-[14px] h-0.5 w-5 bg-current transition ${isOpen ? '-translate-y-[7px] -rotate-45' : ''}`} />
+          </span>
+        </button>
       </div>
-    </motion.header>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            id="mobile-navigation"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.22 }}
+            className="overflow-hidden border-t border-white/10 bg-slate-950 xl:hidden"
+            aria-label="Mobile navigation"
+          >
+            <div className="mx-auto flex max-w-7xl flex-col px-5 py-4 sm:px-6">
+              {navItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="border-b border-white/10 py-4 text-sm font-medium text-slate-200"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <div className="grid gap-3 py-4 sm:grid-cols-2">
+                <a
+                  href="#vending"
+                  onClick={() => setIsOpen(false)}
+                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/15 px-4 text-sm font-semibold text-white"
+                >
+                  Get Vending Service
+                </a>
+                <a
+                  href={quoteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="inline-flex min-h-11 items-center justify-center rounded-md bg-emerald-400 px-4 text-sm font-semibold text-slate-950"
+                >
+                  Schedule a Free Consultation
+                </a>
+              </div>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </header>
   )
 }
 
