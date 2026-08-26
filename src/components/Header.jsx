@@ -4,6 +4,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 const navItems = [
   { label: 'Vending', href: '/vending/' },
   { label: 'Managed IT', href: '/managed-it/' },
+  { label: 'Raleigh Vending', href: '/raleigh-vending/' },
+  { label: 'Garner Vending', href: '/garner-vending/' },
+  { label: 'Cary Vending', href: '/cary-vending/' },
   { label: 'Service Area', href: '/#service-area' },
 ]
 
@@ -20,7 +23,7 @@ function Header() {
           <span className="text-base font-semibold tracking-wide text-white sm:text-lg">Nyuton Enterprises</span>
         </a>
 
-        <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-5 xl:flex" aria-label="Primary navigation">
           {navItems.map((item) => (
             <a key={item.label} href={item.href} className="text-sm font-medium text-slate-300 transition hover:text-white">
               {item.label}

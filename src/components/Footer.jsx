@@ -1,6 +1,14 @@
 const serviceLinks = [
   { label: 'Vending Machines', href: '/vending/' },
   { label: 'Managed Information Technology', href: '/managed-it/' },
+  { label: 'IT Support and Cybersecurity', href: '/it-cybersecurity/' },
+  { label: 'Digital Solutions', href: '/digital-solutions/' },
+]
+
+const locationLinks = [
+  { label: 'Raleigh Vending', href: '/raleigh-vending/' },
+  { label: 'Garner Vending', href: '/garner-vending/' },
+  { label: 'Cary Vending', href: '/cary-vending/' },
 ]
 
 const companyLinks = [
@@ -14,7 +22,7 @@ function Footer() {
   return (
     <footer className="border-t border-white/10 bg-slate-950">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
+        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div>
             <div className="flex items-center gap-3">
               <img src="/assets/img/logo.jpg" alt="" className="h-10 w-10 rounded-md object-cover" width="40" height="40" />
@@ -29,6 +37,19 @@ function Footer() {
             <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">Services</h2>
             <ul className="mt-5 space-y-3">
               {serviceLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-sm text-slate-400 transition hover:text-white">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">Locations</h2>
+            <ul className="mt-5 space-y-3">
+              {locationLinks.map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-sm text-slate-400 transition hover:text-white">
                     {link.label}

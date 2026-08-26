@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /legacy-site/
+Sitemap: https://nyutonenterprises.com/sitemap.xml

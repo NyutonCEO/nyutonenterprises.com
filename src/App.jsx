@@ -99,7 +99,14 @@ const processSteps = [
   },
 ]
 
-const serviceAreas = ['Garner', 'Raleigh', 'Durham', 'Chapel Hill', 'Cary', 'Research Triangle Region']
+const serviceAreas = [
+  { label: 'Garner', href: '/garner-vending/' },
+  { label: 'Raleigh', href: '/raleigh-vending/' },
+  { label: 'Durham', href: '/vending/' },
+  { label: 'Chapel Hill', href: '/vending/' },
+  { label: 'Cary', href: '/cary-vending/' },
+  { label: 'Research Triangle Region', href: '/vending/' },
+]
 
 const managedItServices = [
   {
@@ -734,9 +741,13 @@ function ServiceArea() {
         />
         <div className="grid gap-3 sm:grid-cols-2">
           {serviceAreas.map((area) => (
-            <div key={area} className="rounded-md border border-white/10 bg-white/[0.04] px-5 py-4 text-slate-200">
-              {area}
-            </div>
+            <a
+              key={area.label}
+              href={area.href}
+              className="rounded-md border border-white/10 bg-white/[0.04] px-5 py-4 text-slate-200 transition hover:border-emerald-300/40 hover:bg-white/[0.07] hover:text-white"
+            >
+              {area.label}
+            </a>
           ))}
         </div>
       </div>
