@@ -4,10 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 const navItems = [
   { label: 'Vending', href: '/vending/' },
   { label: 'Managed IT', href: '/managed-it/' },
+]
+
+const serviceAreaItems = [
+  { label: 'Service Area Overview', href: '/#service-area' },
   { label: 'Raleigh Vending', href: '/raleigh-vending/' },
   { label: 'Garner Vending', href: '/garner-vending/' },
   { label: 'Cary Vending', href: '/cary-vending/' },
-  { label: 'Service Area', href: '/#service-area' },
 ]
 
 const quoteUrl = 'https://calendly.com/nyutonllc/30min'
@@ -29,6 +32,27 @@ function Header() {
               {item.label}
             </a>
           ))}
+          <div className="group relative">
+            <button
+              type="button"
+              className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-white focus:outline-none focus:text-white"
+              aria-haspopup="true"
+            >
+              Service Area
+              <span className="text-xs text-slate-500 transition group-hover:text-slate-300">v</span>
+            </button>
+            <div className="invisible absolute left-1/2 top-full z-50 mt-3 w-56 -translate-x-1/2 rounded-md border border-white/10 bg-slate-950 p-2 opacity-0 shadow-2xl shadow-slate-950/40 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              {serviceAreaItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="block rounded-md px-3 py-2.5 text-sm font-medium text-slate-300 transition hover:bg-white/[0.06] hover:text-white"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </nav>
 
         <div className="hidden items-center gap-3 xl:flex">
@@ -80,6 +104,21 @@ function Header() {
                   {item.label}
                 </a>
               ))}
+              <div className="border-b border-white/10 py-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Service Area</p>
+                <div className="mt-3 grid gap-2">
+                  {serviceAreaItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="rounded-md bg-white/[0.04] px-3 py-3 text-sm font-medium text-slate-200"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
               <div className="grid gap-3 py-4">
                 <a
                   href={quoteUrl}
