@@ -13,6 +13,8 @@ export default defineConfig({
         main: './index.html',
         vending: './vending/index.html',
         itCybersecurity: './it-cybersecurity/index.html',
+        managedItServices: './Managed-IT-Services/index.html',
+        managedIt: './managed-it/index.html',
         digitalSolutions: './digital-solutions/index.html',
         raleighVending: './raleigh-vending/index.html',
         garnerVending: './garner-vending/index.html',

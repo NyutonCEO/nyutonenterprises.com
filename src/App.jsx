@@ -8,81 +8,190 @@ const contactEmail = 'nyutonllc@protonmail.com'
 
 const coreServices = [
   {
-    title: 'Vending & Micro-Markets',
-    summary: 'Managed snack, drink, and workplace refreshment programs for offices, warehouses, community properties, and local businesses.',
-    points: ['Machine placement and product planning', 'Cashless payment options', 'Restock and service coordination'],
+    title: 'Vending Machines',
+    summary: 'Cashless vending machine placement planned around location traffic, product demand, payment convenience, and reliable service.',
+    points: ['Machine placement and product planning', 'Cashless and mobile payment readiness', 'Restock and service coordination'],
     cta: 'Get Vending Service',
     href: '/vending/',
   },
   {
-    title: 'IT & Cybersecurity',
-    summary: 'Practical technology support and security readiness for small teams that need reliable systems without enterprise complexity.',
-    points: ['Device, network, and account support', 'Security reviews and hardening', 'Backup and continuity planning'],
-    cta: 'Request IT Support',
-    href: '/it-cybersecurity/',
-  },
-  {
-    title: 'Digital Solutions',
-    summary: 'Web, automation, analytics, and local digital improvements that help businesses operate cleaner and convert more demand.',
-    points: ['Business websites and landing pages', 'Workflow automation', 'Local search and conversion tracking'],
-    cta: 'Schedule a Free Consultation',
-    href: '/digital-solutions/',
+    title: 'Managed Information Technology',
+    summary: 'Managed cloud and on-premises technology support for businesses that need reliable devices, networks, accounts, backups, and secure access.',
+    points: ['Cloud and on-prem support', 'Device, network, and account management', 'Backup and continuity planning'],
+    cta: 'Book an IT Assessment',
+    href: '/managed-it/',
   },
 ]
 
 const detailSections = [
   {
     id: 'vending',
-    eyebrow: 'Vending & Micro-Markets',
-    title: 'Refreshment programs built around your location.',
-    copy: 'Nyuton helps local facilities add convenient automated commerce without creating extra work for their staff. The approach starts with traffic patterns, audience needs, and available space, then moves into equipment, product mix, payment setup, and service cadence.',
+    eyebrow: 'Vending Machines',
+    title: 'Cashless vending placement that fits your location.',
+    copy: 'Nyuton helps workplaces, warehouses, community properties, and local facilities add convenient vending machines without handing staff another operational burden. Placement is planned around traffic, product demand, equipment fit, payment expectations, and refill cadence.',
     image: '/assets/img/vending-machine.webp',
     imageAlt: 'Nyuton Enterprises vending machine service example',
-    items: ['Traditional vending for snacks and drinks', 'Micro-market planning for larger breakrooms', 'Product mix reviews based on workplace preferences', 'Clear next steps for placement, refill, and maintenance'],
-    cta: 'Get Vending Service',
+    items: ['Snack and drink vending machine placement', 'Cashless payment and mobile-pay readiness', 'Product mix planning by location type', 'Refill and service coordination'],
+    cta: 'Get Started with Vending',
   },
   {
     id: 'it-cybersecurity',
-    eyebrow: 'IT & Cybersecurity',
-    title: 'Dependable support for the systems your business runs on.',
-    copy: 'The IT and cybersecurity work is intentionally pragmatic: secure the basics, reduce avoidable downtime, and help owners make better decisions about devices, access, backups, and vendor tools.',
-    image: '/assets/img/hero.svg',
+    eyebrow: 'Managed Information Technology',
+    title: 'Cloud and on-prem support for the systems your business runs on.',
+    copy: 'Managed IT work is intentionally pragmatic: reduce downtime, secure the basics, and give owners a clearer handle on cloud tools, on-prem devices, Wi-Fi, accounts, backups, vendor platforms, and everyday support needs.',
+    image: '/assets/img/managed-it-services-vendor-ecosystem.png',
     imageAlt: 'Business technology workspace',
-    items: ['Small business IT support and troubleshooting', 'Account security and access reviews', 'Endpoint, Wi-Fi, and backup readiness', 'Security policies and staff awareness guidance'],
-    cta: 'Request IT Support',
-  },
-  {
-    id: 'digital-solutions',
-    eyebrow: 'Digital Solutions',
-    title: 'Sharper digital systems for growth and operations.',
-    copy: 'Nyuton builds and improves the practical digital pieces that make a business easier to find, understand, and work with: websites, landing pages, forms, automations, analytics, and local search foundations.',
-    image: '/assets/img/hero.svg',
-    imageAlt: 'Digital business systems illustration',
-    items: ['Modern websites and campaign landing pages', 'Lead capture and quote request flows', 'Analytics and conversion tracking setup', 'Automation for repetitive business workflows'],
-    cta: 'Schedule a Free Consultation',
+    items: ['Managed cloud service support', 'On-prem device and network support', 'Account access and backup readiness', 'Security policies and staff awareness guidance'],
+    cta: 'Establish IT Support',
   },
 ]
 
 const whyNyuton = [
   {
-    title: 'Regional focus',
-    copy: 'Built for businesses in Garner, Greater Raleigh, and the Research Triangle Area that need a responsive regional partner.',
+    title: 'Local response',
+    copy: 'Built for businesses in Garner, Greater Raleigh, and the Research Triangle Area that need a practical regional partner.',
   },
   {
-    title: 'Commercially practical',
-    copy: 'Recommendations are tied to operations, service quality, customer convenience, and measurable business outcomes.',
+    title: 'Operational fit',
+    copy: 'Recommendations are tied to traffic, service quality, customer convenience, uptime, and maintainable business systems.',
   },
   {
     title: 'One accountable partner',
-    copy: 'Vending, IT, cybersecurity, and digital work can be coordinated through one business instead of scattered vendors.',
+    copy: 'Vending machine placement and managed information technology can be coordinated through one business.',
   },
   {
-    title: 'Clean execution',
-    copy: 'The work is scoped clearly, implemented carefully, and kept maintainable after launch or installation.',
+    title: 'Clear execution',
+    copy: 'The work is scoped clearly, implemented carefully, and structured so support after launch or installation stays straightforward.',
   },
 ]
 
-const serviceAreas = ['Garner', 'Greater Raleigh', 'Research Triangle Area']
+const technologyFeatures = [
+  {
+    title: 'Cashless Commerce',
+    copy: 'Plan vending around card and mobile payment expectations so employees, tenants, guests, and visitors are not limited by cash.',
+  },
+  {
+    title: 'Product Intelligence',
+    copy: 'Use location type, audience patterns, and service feedback to tune snack and beverage product mix over time.',
+  },
+  {
+    title: 'Managed Support',
+    copy: 'Keep everyday business technology moving with managed cloud tools, on-prem devices, Wi-Fi, access, backups, and security fundamentals.',
+  },
+  {
+    title: 'Support Visibility',
+    copy: 'Create clearer intake paths for vending requests, IT issues, consultations, follow-up, and support priorities.',
+  },
+]
+
+const processSteps = [
+  {
+    title: 'Assess the location',
+    copy: 'Review foot traffic, staff count, available space, network needs, access hours, current pain points, and business priorities.',
+  },
+  {
+    title: 'Design the service plan',
+    copy: 'Recommend the vending machine setup, managed IT scope, payment expectations, cloud and on-prem support needs, and support cadence that fit the site.',
+  },
+  {
+    title: 'Launch and support',
+    copy: 'Coordinate setup, vending service, IT issue response, product reviews, and ongoing cloud or on-prem technology improvements as needs change.',
+  },
+]
+
+const serviceAreas = ['Garner', 'Raleigh', 'Durham', 'Chapel Hill', 'Cary', 'Research Triangle Region']
+
+const managedItServices = [
+  {
+    title: 'Employee IT Support',
+    source: 'Help Desk',
+    outcome: 'Your employees know exactly who to contact when technology gets in the way.',
+  },
+  {
+    title: 'User Access Management',
+    source: 'Onboarding and offboarding',
+    outcome: 'New employees get the right access; departing employees lose it promptly.',
+  },
+  {
+    title: 'Google Workspace Management',
+    source: 'Google Workspace',
+    outcome: 'Accounts, permissions, groups, and administration stay handled.',
+  },
+  {
+    title: 'Account Security',
+    source: 'Passwords and MFA',
+    outcome: 'Business accounts get stronger control through passwords, MFA, and access review.',
+  },
+  {
+    title: 'Computer Management',
+    source: 'Endpoint management',
+    outcome: 'Company computers stay managed, supportable, and easier to troubleshoot.',
+  },
+  {
+    title: 'Network Management',
+    source: 'Network and Wi-Fi',
+    outcome: 'Connectivity has a clear owner when networks or Wi-Fi slow the team down.',
+  },
+]
+
+const completeItIncludes = [
+  'Remote help desk',
+  'Employee onboarding and offboarding',
+  'Google Workspace administration',
+  'MFA management',
+  'Password policy management',
+  'Computer management',
+  'Endpoint troubleshooting',
+  'Network support',
+  'Wi-Fi support',
+]
+
+const assessmentItems = [
+  'Users and employee access',
+  'Google Workspace configuration',
+  'Administrator accounts',
+  'MFA coverage',
+  'Managed and unmanaged devices',
+  'Onboarding and offboarding process',
+  'Network and Wi-Fi environment',
+  'Current support process',
+]
+
+const whyManagedItNyuton = [
+  {
+    title: 'One accountable IT partner',
+    copy: 'Your team does not have to coordinate disconnected vendors for everyday support, access, computers, and connectivity.',
+  },
+  {
+    title: 'Built around Google Workspace',
+    copy: 'The service model fits businesses that run on Google Workspace and need account administration handled properly.',
+  },
+  {
+    title: 'Designed for growing organizations',
+    copy: 'You get professional IT ownership without hiring a full internal IT department before the business is ready.',
+  },
+  {
+    title: 'Security built into daily IT management',
+    copy: 'MFA, access management, password policy, and endpoint administration are part of the operating model.',
+  },
+]
+
+const managedItBuyingPath = [
+  'IT management assessment',
+  '30-minute discovery call',
+  'Environment review',
+  'Proposal',
+  'Onboarding',
+  'Monthly managed IT',
+]
+
+const managedItProof = [
+  'Businesses supported',
+  'Users supported',
+  'Devices managed',
+  'Average response time',
+  'Years of IT experience',
+]
 
 const homeFaqs = [
   {
@@ -91,24 +200,25 @@ const homeFaqs = [
   },
   {
     question: 'Can one company help with vending and technology needs?',
-    answer: 'Yes. Nyuton coordinates vending, micro-market planning, IT support, cybersecurity readiness, and digital solutions through one accountable regional partner.',
+    answer: 'Yes. Nyuton coordinates cashless vending machine placement and managed cloud or on-prem IT support through one accountable regional partner.',
   },
   {
-    question: 'How do I start a vending, IT, or digital project?',
-    answer: 'Start with a free consultation. Nyuton reviews your location, business need, timeline, and operating priorities before recommending a practical next step.',
+    question: 'How do I start a vending placement or managed IT project?',
+    answer: 'Start with a free consultation. Nyuton reviews your location, technology needs, timeline, and operating priorities before recommending a practical next step.',
   },
 ]
 
 const landingPages = {
   '/vending/': {
-    eyebrow: 'Vending & Micro-Markets',
-    title: 'Vending machine service for Raleigh-area businesses.',
-    intro: 'Nyuton Enterprises helps local workplaces add reliable snack, drink, and micro-market options without creating extra operational work for staff.',
-    description: 'The vending process starts with location fit, foot traffic, product preferences, available space, and payment needs. From there, Nyuton can help plan machine placement, cashless payment expectations, stocking priorities, and service coordination for offices, warehouses, multifamily properties, and local facilities.',
+    accent: 'yellow',
+    eyebrow: 'Vending Machines',
+    title: 'Upgrade Your Breakroom Without Spending a Dollar',
+    intro: 'Nyuton Enterprises installs and manages modern vending machines for qualified Raleigh-Durham workplaces and properties.',
+    description: 'Qualified locations can upgrade their breakroom or shared amenity area with managed vending service that removes the usual operational burden. Nyuton reviews location fit, traffic, product preferences, available space, and payment needs, then coordinates placement, cashless payment expectations, stocking priorities, service, and maintenance.',
     image: '/assets/img/vending-machine.webp',
     imageAlt: 'Cashless vending machine stocked with snacks',
-    primaryCta: 'Get Vending Service',
-    highlights: ['Snack and drink vending programs', 'Cashless and mobile payment planning', 'Micro-market planning for larger breakrooms', 'Restock and service coordination'],
+    primaryCta: 'Request Free Vending Service',
+    highlights: ['No equipment cost', 'No restocking', 'No maintenance', 'Cashless payments', 'Custom selections', 'Locally managed'],
     faqs: [
       {
         question: 'What types of locations are a fit for vending service?',
@@ -125,14 +235,15 @@ const landingPages = {
     ],
   },
   '/it-cybersecurity/': {
-    eyebrow: 'IT & Cybersecurity',
-    title: 'Small business IT support and cybersecurity readiness.',
+    accent: 'red',
+    eyebrow: 'Managed Information Technology',
+    title: 'Managed cloud and on-prem IT support for small businesses.',
     intro: 'Nyuton helps small teams reduce avoidable downtime, strengthen account security, and make practical technology decisions.',
-    description: 'The work focuses on the operating basics that matter most: device reliability, Wi-Fi and network issues, account access, endpoint hygiene, backup readiness, and staff security habits. The goal is to improve resilience without adding enterprise complexity.',
-    image: '/assets/img/hero.svg',
+    description: 'The work focuses on the operating basics that matter most: cloud tools, on-prem devices, Wi-Fi and network issues, account access, endpoint hygiene, backup readiness, and staff security habits. The goal is to improve resilience without adding enterprise complexity.',
+    image: '/assets/img/managed-it-services-vendor-ecosystem.png',
     imageAlt: 'Business technology systems illustration',
-    primaryCta: 'Request IT Support',
-    highlights: ['Device and network troubleshooting', 'Account access and security reviews', 'Backup and continuity planning', 'Security policies and staff guidance'],
+    primaryCta: 'Request Managed IT',
+    highlights: ['Cloud and on-prem troubleshooting', 'Account access and security reviews', 'Backup and continuity planning', 'Security policies and staff guidance'],
     faqs: [
       {
         question: 'Do you support small businesses without an internal IT team?',
@@ -145,6 +256,66 @@ const landingPages = {
       {
         question: 'Can IT support and cybersecurity be scoped together?',
         answer: 'Yes. Many projects combine troubleshooting, account cleanup, backup planning, and security hardening in one focused engagement.',
+      },
+    ],
+  },
+  '/Managed-IT-Services/': {
+    layout: 'managedIt',
+    accent: 'red',
+    eyebrow: 'Managed IT Services',
+    title: 'Outsourced IT Management for Growing Businesses',
+    intro: 'We manage your employees\' IT support, Google Workspace, user access, computers, passwords, MFA, networks, and Wi-Fi so your team can stay productive without hiring a full internal IT department.',
+    description: 'Nyuton Enterprises becomes the accountable technology partner responsible for day-to-day IT ownership: supported employees, controlled access, managed computers, and reliable connectivity.',
+    image: '/assets/img/managed-it-services-vendor-ecosystem.png',
+    imageAlt: 'Managed IT systems for business operations',
+    primaryCta: 'Book Your IT Assessment',
+    highlights: ['Help Desk', 'Google Workspace', 'User Management', 'Endpoint Management', 'Network and Wi-Fi'],
+    faqs: [
+      {
+        question: 'Who is managed IT for?',
+        answer: 'Managed IT is built for growing organizations that need professional IT ownership but do not have a dedicated internal IT department.',
+      },
+      {
+        question: 'What happens in the IT Management Assessment?',
+        answer: 'Nyuton reviews users, administrator accounts, Google Workspace, MFA, devices, onboarding and offboarding, network and Wi-Fi conditions, and the current support process. The result is an IT Management Score plus a risk and improvement report.',
+      },
+      {
+        question: 'Do you only provide help desk support?',
+        answer: 'No. Help desk support is part of the offer, but the goal is broader IT ownership across user access, Google Workspace, account security, computers, networks, and Wi-Fi.',
+      },
+      {
+        question: 'Do you publish managed IT pricing?',
+        answer: 'Starting pricing is not published yet. The assessment helps define the number of users, devices, locations, and support needs before Nyuton prepares a managed IT proposal.',
+      },
+    ],
+  },
+  '/managed-it/': {
+    layout: 'managedIt',
+    accent: 'red',
+    eyebrow: 'Managed IT',
+    title: 'Outsourced IT Management for Growing Businesses',
+    intro: 'We manage your employees\' IT support, Google Workspace, user access, computers, passwords, MFA, networks, and Wi-Fi so your team can stay productive without hiring a full internal IT department.',
+    description: 'Nyuton Enterprises becomes the accountable technology partner responsible for day-to-day IT ownership: supported employees, controlled access, managed computers, and reliable connectivity.',
+    image: '/assets/img/managed-it-services-vendor-ecosystem.png',
+    imageAlt: 'Managed IT systems for business operations',
+    primaryCta: 'Book Your IT Assessment',
+    highlights: ['Help Desk', 'Google Workspace', 'User Management', 'Endpoint Management', 'Network and Wi-Fi'],
+    faqs: [
+      {
+        question: 'Who is managed IT for?',
+        answer: 'Managed IT is built for growing organizations that need professional IT ownership but do not have a dedicated internal IT department.',
+      },
+      {
+        question: 'What happens in the IT Management Assessment?',
+        answer: 'Nyuton reviews users, administrator accounts, Google Workspace, MFA, devices, onboarding and offboarding, network and Wi-Fi conditions, and the current support process. The result is an IT Management Score plus a risk and improvement report.',
+      },
+      {
+        question: 'Do you only provide help desk support?',
+        answer: 'No. Help desk support is part of the offer, but the goal is broader IT ownership across user access, Google Workspace, account security, computers, networks, and Wi-Fi.',
+      },
+      {
+        question: 'Do you publish managed IT pricing?',
+        answer: 'Starting pricing is not published yet. The assessment helps define the number of users, devices, locations, and support needs before Nyuton prepares a managed IT proposal.',
       },
     ],
   },
@@ -251,6 +422,42 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 }
 
+const landingThemes = {
+  yellow: {
+    eyebrow: 'text-yellow-300',
+    badge: 'border-yellow-300/30 bg-yellow-300/[0.12] text-yellow-100',
+    button: 'yellow',
+    heroBorder: 'border-yellow-300/35',
+    heroGlow: 'shadow-yellow-950/35',
+    heroPattern:
+      'bg-[linear-gradient(135deg,rgba(250,204,21,0.18)_0_1px,transparent_1px_22px),radial-gradient(circle_at_18%_20%,rgba(250,204,21,0.26),transparent_28%),radial-gradient(circle_at_82%_8%,rgba(34,211,238,0.16),transparent_26%)]',
+    card: 'border-yellow-300/20 bg-yellow-300/[0.06]',
+    marker: 'bg-yellow-300 text-slate-950',
+  },
+  red: {
+    eyebrow: 'text-red-300',
+    badge: 'border-red-300/30 bg-red-300/[0.12] text-red-100',
+    button: 'red',
+    heroBorder: 'border-red-300/35',
+    heroGlow: 'shadow-red-950/35',
+    heroPattern:
+      'bg-[linear-gradient(135deg,rgba(239,68,68,0.18)_0_1px,transparent_1px_22px),radial-gradient(circle_at_18%_20%,rgba(239,68,68,0.26),transparent_28%),radial-gradient(circle_at_82%_8%,rgba(34,211,238,0.16),transparent_26%)]',
+    card: 'border-red-300/20 bg-red-300/[0.06]',
+    marker: 'bg-red-500 text-white',
+  },
+  emerald: {
+    eyebrow: 'text-emerald-300',
+    badge: 'border-emerald-300/30 bg-emerald-300/[0.12] text-emerald-100',
+    button: 'primary',
+    heroBorder: 'border-emerald-300/25',
+    heroGlow: 'shadow-slate-950/40',
+    heroPattern:
+      'bg-[linear-gradient(135deg,rgba(52,211,153,0.14)_0_1px,transparent_1px_22px),radial-gradient(circle_at_18%_20%,rgba(52,211,153,0.18),transparent_28%),radial-gradient(circle_at_82%_8%,rgba(34,211,238,0.14),transparent_26%)]',
+    card: 'border-white/10 bg-white/[0.04]',
+    marker: 'bg-emerald-400 text-slate-950',
+  },
+}
+
 function SectionHeader({ eyebrow, title, copy, align = 'left' }) {
   return (
     <div className={align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl'}>
@@ -262,10 +469,14 @@ function SectionHeader({ eyebrow, title, copy, align = 'left' }) {
 }
 
 function CTAButton({ children, href = quoteUrl, variant = 'primary' }) {
-  const classes =
-    variant === 'secondary'
-      ? 'border border-white/15 bg-white/5 text-white hover:border-white/30 hover:bg-white/10'
-      : 'bg-emerald-400 text-slate-950 hover:bg-emerald-300'
+  const variantClasses = {
+    primary: 'bg-emerald-400 text-slate-950 hover:bg-emerald-300',
+    secondary: 'border border-white/15 bg-white/5 text-white hover:border-white/30 hover:bg-white/10',
+    yellow: 'bg-yellow-400 text-slate-950 hover:bg-yellow-300',
+    red: 'bg-red-500 text-white hover:bg-red-400',
+  }
+
+  const classes = variantClasses[variant] || variantClasses.primary
 
   return (
     <a
@@ -289,8 +500,8 @@ function Hero() {
         width="1600"
         height="1000"
       />
-      <div className="absolute inset-0 bg-slate-950/45" />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20" />
+      <div className="absolute inset-0 bg-slate-950/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/82 to-cyan-950/25" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 to-transparent" />
 
       <div className="relative mx-auto flex min-h-[92vh] max-w-7xl items-center px-5 pb-20 pt-32 sm:px-6 lg:px-8">
@@ -301,21 +512,27 @@ function Hero() {
           className="max-w-4xl"
         >
           <motion.p variants={fadeUp} className="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-300">
-            Business technology and automated commerce
+            Vending machines and managed information technology
           </motion.p>
           <motion.h1
             variants={fadeUp}
             className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl"
           >
-            Practical systems for modern regional businesses.
+            Vending Placement and Managed IT Support for the Raleigh-Durham Research Triangle Region of North Carolina.
           </motion.h1>
           <motion.p variants={fadeUp} className="mt-7 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl">
-            Nyuton Enterprises LLC provides vending, micro-market, IT, cybersecurity, and digital solutions for businesses in Garner, Greater Raleigh, and the Research Triangle Area.
+            Nyuton Enterprises LLC provides cashless vending machine placement and Managed Cloud & On-Prem tech solutions across Raleigh-Durham, a multi-county business region anchored by North Carolina's capital and the dynamic markets of Durham, Chapel Hill, Cary, and many established towns and growing communities across the central part of the state.
           </motion.p>
           <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <CTAButton href="#vending">Get Vending Service</CTAButton>
-            <CTAButton href="#it-cybersecurity" variant="secondary">Request IT Support</CTAButton>
-            <CTAButton>Schedule a Free Consultation</CTAButton>
+            <CTAButton href="#vending" variant="yellow">Get Started with Vending</CTAButton>
+            <CTAButton href="#it-cybersecurity" variant="red">Establish IT Support</CTAButton>
+          </motion.div>
+          <motion.div variants={fadeUp} className="mt-12 grid max-w-3xl gap-3 text-sm text-slate-200 sm:grid-cols-3">
+            {['Cashless vending', 'Small business IT', 'Cybersecurity basics'].map((item) => (
+              <div key={item} className="rounded-md border border-white/15 bg-slate-950/45 px-4 py-3 backdrop-blur-sm">
+                {item}
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </div>
@@ -329,10 +546,10 @@ function CoreServices() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Core services"
-          title="Three ways Nyuton helps businesses run better."
-          copy="The site is now centered on focused commercial services instead of unrelated ventures. Each category is designed to support real operating needs."
+          title="Vending placement and managed IT for practical business operations."
+          copy="Nyuton focuses on two operating needs business owners can feel: convenient cashless vending for their location and dependable cloud or on-prem technology support for their team."
         />
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
           {coreServices.map((service, index) => (
             <motion.article
               key={service.title}
@@ -408,6 +625,73 @@ function DetailSection({ section, index }) {
   )
 }
 
+function TechnologyPlatform() {
+  return (
+    <section className="border-y border-white/10 bg-white/[0.03] py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <SectionHeader
+            eyebrow="How it helps"
+            title="A practical service model for locations that need reliable placement and reliable support."
+            copy="Vending machines and managed IT both depend on consistency. Nyuton treats both as business infrastructure: plan the setup, keep the experience simple, and support the system after it is live."
+          />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {technologyFeatures.map((feature, index) => (
+              <motion.article
+                key={feature.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                className="rounded-lg border border-white/10 bg-slate-950/65 p-6"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">0{index + 1}</p>
+                <h3 className="mt-4 text-xl font-semibold text-white">{feature.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{feature.copy}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function ProcessSection() {
+  return (
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <SectionHeader
+          eyebrow="Service process"
+          title="From first walkthrough to ongoing support."
+          copy="The engagement starts with the operating reality of your location, then turns into a clear service plan for vending machine placement, managed information technology, or both."
+          align="center"
+        />
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {processSteps.map((step, index) => (
+            <motion.article
+              key={step.title}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="rounded-lg border border-white/10 bg-white/[0.04] p-6"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-cyan-300/10 text-sm font-bold text-cyan-200">
+                {index + 1}
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-white">{step.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-slate-300">{step.copy}</p>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function WhyNyuton() {
   return (
     <section id="why" className="border-y border-white/10 bg-white/[0.03] py-20 sm:py-24">
@@ -415,7 +699,7 @@ function WhyNyuton() {
         <SectionHeader
           eyebrow="Why Nyuton"
           title="A serious partner for practical business infrastructure."
-          copy="Nyuton combines local service awareness with technology execution, keeping the work grounded in what a business actually needs to operate and grow."
+          copy="Nyuton combines local service awareness with technology execution, keeping vending machine placement and managed IT grounded in what a business actually needs to operate."
           align="center"
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -445,8 +729,8 @@ function ServiceArea() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <SectionHeader
           eyebrow="Greater Raleigh service area"
-          title="Based in Garner. Serving the Greater Raleigh and Research Triangle Area."
-          copy="Nyuton Enterprises LLC is a service-area business with no street address published. Vending opportunities, IT support requests, and digital projects can start with a free consultation."
+          title="Based in Garner. Serving Raleigh-Durham and the Research Triangle region."
+          copy="Nyuton Enterprises LLC is a service-area business with no street address published. Vending placement opportunities and managed IT support requests can start with a free consultation."
         />
         <div className="grid gap-3 sm:grid-cols-2">
           {serviceAreas.map((area) => (
@@ -478,15 +762,285 @@ function FAQSection({ faqs, title = 'Frequently asked questions' }) {
   )
 }
 
+function ManagedItLandingPage({ page }) {
+  const theme = landingThemes[page.accent] || landingThemes.red
+
+  return (
+    <main>
+      <section className="relative isolate overflow-hidden pt-32">
+        <img src={page.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.22]" width="1600" height="1000" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/92 to-slate-950/76" />
+        <div className={`absolute inset-0 opacity-70 ${theme.heroPattern}`} />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-12 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:pb-24">
+          <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.12 }}>
+            <motion.p variants={fadeUp} className={`text-sm font-semibold uppercase tracking-[0.28em] ${theme.eyebrow}`}>
+              {page.eyebrow}
+            </motion.p>
+            <motion.h1 variants={fadeUp} className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Your Business Shouldn't Need a Full-Time IT Department to Have Professional IT Management.
+            </motion.h1>
+            <motion.p variants={fadeUp} className="mt-7 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+              Nyuton Enterprises manages your employees, Google Workspace, computers, accounts, networks, and everyday IT problems for one predictable monthly service.
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <CTAButton variant={theme.button}>{page.primaryCta}</CTAButton>
+              <CTAButton href="#included" variant="secondary">See What's Included</CTAButton>
+            </motion.div>
+            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-2">
+              {page.highlights.map((highlight) => (
+                <span key={highlight} className={`rounded-md border px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] ${theme.badge}`}>
+                  {highlight}
+                </span>
+              ))}
+            </motion.div>
+          </motion.div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className={`relative overflow-hidden rounded-lg border bg-slate-900 shadow-2xl ${theme.heroBorder} ${theme.heroGlow}`}
+          >
+            <div className="border-b border-white/10 px-6 py-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-200">Primary offer</p>
+            </div>
+            <div className="p-6 sm:p-8">
+              <h2 className="text-2xl font-semibold text-white">{page.title}</h2>
+              <p className="mt-5 leading-8 text-slate-300">{page.intro}</p>
+              <div className="mt-8 grid gap-3">
+                {['Managed IT', 'Growing organizations', 'Supported employees', 'Controlled access'].map((item) => (
+                  <div key={item} className="rounded-md border border-white/10 bg-white/[0.04] px-4 py-3 text-sm text-slate-200">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+          <SectionHeader
+            eyebrow="IT ownership"
+            title="Who owns your IT right now?"
+            copy="If employees ask managers for computer help, former employees may still have access, MFA is inconsistent, computers are unmanaged, Wi-Fi is unreliable, or nobody owns Google Workspace administration, you do not just have an IT support problem."
+          />
+          <div className="rounded-lg border border-red-300/20 bg-red-300/[0.08] p-6 sm:p-8">
+            <h3 className="text-2xl font-semibold text-white">You have an IT ownership problem.</h3>
+            <p className="mt-5 leading-8 text-slate-300">
+              Nyuton becomes the accountable technology partner responsible for managing that environment, keeping support, access, devices, security basics, networks, and Wi-Fi tied to one operating model.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="included" className="border-y border-white/10 bg-white/[0.03] py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="One managed IT system"
+            title="Six services, one accountable support relationship."
+            copy="Prospects should not have to assemble a menu of technical services. Nyuton packages the operating pieces growing businesses need into one managed IT relationship."
+            align="center"
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {managedItServices.map((service, index) => (
+              <motion.article
+                key={service.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.45, delay: index * 0.05 }}
+                className="rounded-lg border border-white/10 bg-slate-950/65 p-6"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-red-200">{service.source}</p>
+                <h3 className="mt-4 text-xl font-semibold text-white">{service.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{service.outcome}</p>
+              </motion.article>
+            ))}
+          </div>
+          <p className="mt-10 text-center text-xl font-semibold text-white">One provider. One support relationship. One accountable IT partner.</p>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+          <div className="rounded-lg border border-red-300/25 bg-slate-900 p-6 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-red-200">Flagship package</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Nyuton Complete IT Management</h2>
+            <p className="mt-5 leading-8 text-slate-300">
+              A complete monthly managed IT relationship for businesses that need employee support, Google Workspace administration, account security, computer management, and network support under one owner.
+            </p>
+            <div className="mt-8 rounded-md border border-white/10 bg-white/[0.04] px-5 py-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Pricing</p>
+              <p className="mt-2 text-2xl font-semibold text-white">Starting price available after assessment</p>
+              <p className="mt-3 text-sm leading-6 text-slate-400">
+                Publish a starting monthly price once real package data is ready. Until then, the assessment qualifies fit and scope.
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {completeItIncludes.map((item) => (
+              <div key={item} className="rounded-md border border-white/10 bg-white/[0.04] px-5 py-4 text-sm leading-6 text-slate-200">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-red-950/20 py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+          <SectionHeader
+            eyebrow="Entry offer"
+            title="Start with an IT Management Assessment."
+            copy="A cold visitor should not have to commit to managed IT immediately. The assessment gives qualified prospects a concrete first step and gives Nyuton the context needed to make a serious recommendation."
+          />
+          <div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {assessmentItems.map((item) => (
+                <div key={item} className="rounded-md border border-red-300/20 bg-slate-950/65 px-5 py-4 text-sm text-slate-200">
+                  {item}
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 rounded-lg border border-red-300/25 bg-red-300/[0.1] p-6">
+              <h3 className="text-xl font-semibold text-white">Deliverable: IT Management Score + Risk and Improvement Report</h3>
+              <p className="mt-4 leading-7 text-slate-300">
+                Use this report to show what is working, what is exposed, and what should be improved before a managed IT proposal is prepared.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Proof"
+            title="Add real operating proof as the service grows."
+            copy="Do not invent metrics. This section is ready for real numbers and short case studies as Nyuton collects them."
+            align="center"
+          />
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {managedItProof.map((item) => (
+              <div key={item} className="rounded-lg border border-white/10 bg-white/[0.04] p-5 text-center">
+                <p className="text-3xl font-semibold text-white">--</p>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{item}</p>
+              </div>
+            ))}
+          </div>
+          <article className="mt-8 rounded-lg border border-white/10 bg-slate-950/55 p-6 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-red-200">Example case study format</p>
+            <h3 className="mt-4 text-2xl font-semibold text-white">Healthcare Organization</h3>
+            <p className="mt-4 leading-7 text-slate-300">
+              Challenge: Multiple users, Google Workspace administration, remote support, and device management were consuming management time.
+            </p>
+            <p className="mt-3 leading-7 text-slate-300">
+              Solution: Centralized IT administration and ongoing remote support.
+            </p>
+            <p className="mt-3 leading-7 text-slate-300">
+              Result: One accountable point of contact for IT operations.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-white/[0.03] py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Why Nyuton"
+            title="Practical IT management for growing teams."
+            copy="The offer is strongest when it focuses on operating differences that matter to a business owner, not generic claims every provider makes."
+            align="center"
+          />
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {whyManagedItNyuton.map((item, index) => (
+              <motion.article
+                key={item.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                className="rounded-lg border border-white/10 bg-slate-950/65 p-6"
+              >
+                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-slate-300">{item.copy}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Buying path"
+            title="A clear path from assessment to monthly management."
+            copy="The page should move visitors toward one primary conversion and one clear service relationship."
+            align="center"
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-3 xl:grid-cols-6">
+            {managedItBuyingPath.map((step, index) => (
+              <div key={step} className="rounded-lg border border-white/10 bg-white/[0.04] p-5">
+                <span className="flex h-9 w-9 items-center justify-center rounded-md bg-red-500 text-sm font-bold text-white">
+                  {index + 1}
+                </span>
+                <p className="mt-5 text-sm font-semibold leading-6 text-white">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQSection faqs={page.faqs} title="Managed IT questions" />
+      <ManagedItFinalCTA />
+    </main>
+  )
+}
+
+function ManagedItFinalCTA() {
+  return (
+    <section id="quote" className="px-5 pb-20 sm:px-6 sm:pb-24 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden rounded-lg border border-red-300/25 bg-red-500 px-6 py-12 text-white sm:px-10 lg:px-14">
+        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-red-100">Book an IT assessment</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Find out what is unmanaged, exposed, or slowing your team down.
+            </h2>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-red-50">
+              Start with a focused review of users, Google Workspace, MFA, computers, networks, Wi-Fi, and support process. Nyuton will identify risks, gaps, and the right managed IT path.
+            </p>
+          </div>
+          <a
+            href={quoteUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-h-12 items-center justify-center rounded-md bg-white px-5 py-3 text-sm font-semibold text-red-700 transition hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-500"
+          >
+            Book Your IT Assessment
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function LandingPage({ page }) {
+  const theme = landingThemes[page.accent] || landingThemes.emerald
+
   return (
     <main>
       <section className="relative isolate overflow-hidden pt-32">
         <img src={page.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" width="1600" height="1000" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70" />
+        <div className={`absolute inset-0 opacity-80 ${theme.heroPattern}`} />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-12 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:pb-24">
           <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.12 }}>
-            <motion.p variants={fadeUp} className="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-300">
+            <motion.p variants={fadeUp} className={`text-sm font-semibold uppercase tracking-[0.28em] ${theme.eyebrow}`}>
               {page.eyebrow}
             </motion.p>
             <motion.h1 variants={fadeUp} className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
@@ -495,8 +1049,17 @@ function LandingPage({ page }) {
             <motion.p variants={fadeUp} className="mt-7 max-w-3xl text-lg leading-8 text-slate-200">
               {page.intro}
             </motion.p>
+            {page.highlights?.length > 0 && (
+              <motion.div variants={fadeUp} className="mt-7 flex flex-wrap gap-2">
+                {page.highlights.slice(0, 3).map((highlight) => (
+                  <span key={highlight} className={`rounded-md border px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] ${theme.badge}`}>
+                    {highlight}
+                  </span>
+                ))}
+              </motion.div>
+            )}
             <motion.div variants={fadeUp} className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <CTAButton>{page.primaryCta}</CTAButton>
+              <CTAButton variant={theme.button}>{page.primaryCta}</CTAButton>
               <CTAButton href="/" variant="secondary">View All Services</CTAButton>
             </motion.div>
           </motion.div>
@@ -505,8 +1068,9 @@ function LandingPage({ page }) {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.55, delay: 0.08 }}
-            className="overflow-hidden rounded-lg border border-white/10 bg-slate-900 shadow-2xl shadow-slate-950/40"
+            className={`relative overflow-hidden rounded-lg border bg-slate-900 shadow-2xl ${theme.heroBorder} ${theme.heroGlow}`}
           >
+            <div className={`absolute inset-0 z-10 mix-blend-screen opacity-70 ${theme.heroPattern}`} />
             <img src={page.image} alt={page.imageAlt} className="aspect-[4/3] w-full object-cover" />
           </motion.div>
         </div>
@@ -519,7 +1083,10 @@ function LandingPage({ page }) {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {page.highlights.map((highlight) => (
-              <div key={highlight} className="rounded-md border border-white/10 bg-white/[0.04] px-5 py-4 text-sm leading-6 text-slate-200">
+              <div key={highlight} className={`rounded-md border px-5 py-4 text-sm leading-6 text-slate-200 ${theme.card}`}>
+                <span className={`mb-4 flex h-9 w-9 items-center justify-center rounded-md text-xs font-bold ${theme.marker}`}>
+                  {String(page.highlights.indexOf(highlight) + 1).padStart(2, '0')}
+                </span>
                 {highlight}
               </div>
             ))}
@@ -541,10 +1108,10 @@ function FinalCTA() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-700">Start the conversation</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-              Need vending service, IT support, or a digital business solution?
+              Need vending machines, managed information technology, or both?
             </h2>
             <p className="mt-5 max-w-3xl text-base leading-8 text-slate-800">
-              Share the location, business need, or project goal. Nyuton will help identify the right next step and whether the fit is vending, technology support, cybersecurity, digital work, or a combination. You can also email {contactEmail}.
+              Share the location, technology need, or support goal. Nyuton will help identify the right next step and whether the fit is vending machine placement, managed cloud support, on-prem IT support, or a combination. You can also email {contactEmail}.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
@@ -552,13 +1119,13 @@ function FinalCTA() {
               href="#vending"
               className="inline-flex min-h-12 items-center justify-center rounded-md border border-slate-950/20 bg-white/20 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white/35 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 focus:ring-offset-emerald-300"
             >
-              Get Vending Service
+              Get Started with Vending
             </a>
             <a
               href="#it-cybersecurity"
               className="inline-flex min-h-12 items-center justify-center rounded-md border border-slate-950/20 bg-white/20 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-white/35 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 focus:ring-offset-emerald-300"
             >
-              Request IT Support
+              Establish IT Support
             </a>
             <a
               href={quoteUrl}
@@ -583,7 +1150,7 @@ function App() {
   useEffect(() => {
     const title = page
       ? `${page.title} | Nyuton Enterprises`
-      : 'Nyuton Enterprises | Vending, IT & Cybersecurity in Raleigh NC'
+      : 'Nyuton Enterprises | Vending Placement & Managed IT in Raleigh-Durham NC'
 
     document.title = title
   }, [page])
@@ -592,14 +1159,16 @@ function App() {
     <div className="min-h-screen bg-slate-950 text-white">
       <Header />
       {page ? (
-        <LandingPage page={page} />
+        page.layout === 'managedIt' ? <ManagedItLandingPage page={page} /> : <LandingPage page={page} />
       ) : (
         <main>
           <Hero />
           <CoreServices />
+          <TechnologyPlatform />
           {detailSections.map((section, index) => (
             <DetailSection key={section.id} section={section} index={index} />
           ))}
+          <ProcessSection />
           <WhyNyuton />
           <ServiceArea />
           <FAQSection faqs={homeFaqs} />

@@ -2,10 +2,8 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const navItems = [
-  { label: 'Services', href: '/#services' },
   { label: 'Vending', href: '/vending/' },
-  { label: 'IT & Cybersecurity', href: '/it-cybersecurity/' },
-  { label: 'Digital', href: '/digital-solutions/' },
+  { label: 'Managed IT', href: '/managed-it/' },
   { label: 'Service Area', href: '/#service-area' },
 ]
 
@@ -31,12 +29,6 @@ function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 xl:flex">
-          <a
-            href="/it-cybersecurity/"
-            className="inline-flex min-h-11 items-center rounded-md border border-white/15 px-4 text-sm font-semibold text-white transition hover:bg-white/10"
-          >
-            Request IT Support
-          </a>
           <a
             href={quoteUrl}
             target="_blank"
@@ -85,14 +77,7 @@ function Header() {
                   {item.label}
                 </a>
               ))}
-              <div className="grid gap-3 py-4 sm:grid-cols-2">
-                <a
-                  href="/vending/"
-                  onClick={() => setIsOpen(false)}
-                  className="inline-flex min-h-11 items-center justify-center rounded-md border border-white/15 px-4 text-sm font-semibold text-white"
-                >
-                  Get Vending Service
-                </a>
+              <div className="grid gap-3 py-4">
                 <a
                   href={quoteUrl}
                   target="_blank"

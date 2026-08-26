@@ -1,7 +1,6 @@
 const serviceLinks = [
-  { label: 'Vending & Micro-Markets', href: '/vending/' },
-  { label: 'IT & Cybersecurity', href: '/it-cybersecurity/' },
-  { label: 'Digital Solutions', href: '/digital-solutions/' },
+  { label: 'Vending Machines', href: '/vending/' },
+  { label: 'Managed Information Technology', href: '/managed-it/' },
 ]
 
 const companyLinks = [
@@ -22,7 +21,7 @@ function Footer() {
               <span className="text-lg font-semibold text-white">Nyuton Enterprises</span>
             </div>
             <p className="mt-5 max-w-md text-sm leading-7 text-slate-400">
-              Business technology and automated commerce solutions from Garner, North Carolina, serving the Greater Raleigh and Research Triangle Area.
+              Cashless vending machine placement and managed cloud or on-prem IT support from Garner, North Carolina, serving Raleigh-Durham and the Research Triangle region.
             </p>
           </div>
 
